@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{88FDA353-8268-42D7-B91F-04F14507AC80}|Dados\\Dados.csproj|c:\\users\\moise\\desktop\\new_pharma\\sistema_new_pharma\\new_pharma\\new_pharma\\dados\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88FDA353-8268-42D7-B91F-04F14507AC80}|Dados\\Dados.csproj|solutionrelative:dados\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DA929C2-77AA-49D1-9F52-E2819AD6ECA1}|Negocio\\Negocio.csproj|c:\\users\\moise\\desktop\\new_pharma\\sistema_new_pharma\\new_pharma\\new_pharma\\negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DA929C2-77AA-49D1-9F52-E2819AD6ECA1}|Negocio\\Negocio.csproj|solutionrelative:negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1E52526-6849-41DD-BDF7-EE853BD1C4A7}|Views\\Views.csproj|c:\\users\\moise\\desktop\\new_pharma\\sistema_new_pharma\\new_pharma\\new_pharma\\views\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E1E52526-6849-41DD-BDF7-EE853BD1C4A7}|Views\\Views.csproj|solutionrelative:views\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\moise\\Downloads\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,49 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Class1.cs",
-              "RelativeDocumentMoniker": "Dados\\Class1.cs",
-              "ToolTip": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Class1.cs",
-              "RelativeToolTip": "Dados\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T19:33:42.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Class1.cs",
-              "RelativeDocumentMoniker": "Negocio\\Class1.cs",
-              "ToolTip": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Class1.cs",
-              "RelativeToolTip": "Negocio\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T19:32:56.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Views\\Form1.cs",
-              "RelativeDocumentMoniker": "Views\\Form1.cs",
-              "ToolTip": "C:\\Users\\moise\\Desktop\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Views\\Form1.cs [Projeto]",
-              "RelativeToolTip": "Views\\Form1.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T19:32:06.256Z",
-              "EditorCaption": " [Projeto]"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
