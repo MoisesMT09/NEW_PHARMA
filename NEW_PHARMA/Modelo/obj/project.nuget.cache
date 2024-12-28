@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S7YrfkT8Q+I=",
+  "dgSpecHash": "mpxfntdICMc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\moise\\Downloads\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj",
+  "projectFilePath": "C:\\Users\\moise\\Downloads\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moise\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\moise\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
