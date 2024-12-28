@@ -1,0 +1,16 @@
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\bin\Debug\net8.0\Dados.deps.json
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\bin\Debug\net8.0\Dados.dll
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\bin\Debug\net8.0\Dados.pdb
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\bin\Debug\net8.0\Modelo.dll
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\bin\Debug\net8.0\Modelo.pdb
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.csproj.AssemblyReference.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.AssemblyInfoInputs.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.AssemblyInfo.cs
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.csproj.CoreCompileInputs.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.sourcelink.json
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.csproj.Up2Date
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.dll
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\refint\Dados.dll
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\Dados.pdb
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Dados\obj\Debug\net8.0\ref\Dados.dll

@@ -2,13 +2,14 @@
 using Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dados
 {
-    class DCategoria
+    public class DCategoria
     {
         private DadosConexao conexao;
 
@@ -51,7 +52,7 @@ namespace Dados
             conexao.FecharConexao();
         }
 
-        public System.Data.DataTable Localizar(String valor)
+        public DataTable Localizar(String valor)
         {
             System.Data.DataTable tabela = new System.Data.DataTable();
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbCategoria WHERE Nome LIKE '%" + valor + "%'", conexao.StringConexao1);

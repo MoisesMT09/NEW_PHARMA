@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Dados
 {
-    internal class DadosConexao
+    public class DadosConexao
     {
         private String StringConexao;
         private SqlConnection Conexao;

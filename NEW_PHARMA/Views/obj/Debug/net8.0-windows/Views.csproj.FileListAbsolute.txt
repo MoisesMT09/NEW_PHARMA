@@ -1,0 +1,6 @@
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.csproj.AssemblyReference.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.AssemblyInfoInputs.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.AssemblyInfo.cs
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.csproj.CoreCompileInputs.cache
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.sourcelink.json
