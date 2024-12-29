@@ -9,7 +9,7 @@ using Modelo;
 
 namespace Negocio
 {
-    internal class NegCategoria
+    public class NegCategoria
     {
         private DadosConexao conexao;
 

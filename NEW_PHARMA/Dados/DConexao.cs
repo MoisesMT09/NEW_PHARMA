@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dados
 {
-    internal class DConexao
+    public class DConexao
     {
         public static String StringConexao
         {
