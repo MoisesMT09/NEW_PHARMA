@@ -98,7 +98,7 @@ namespace Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
         private void btnLocalizar_Click(object sender, EventArgs e)

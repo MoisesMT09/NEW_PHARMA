@@ -29,25 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelaPrincipal));
-            menuStrip1 = new MenuStrip();
+            Menu = new MenuStrip();
             CadastroMenuPrincipal = new ToolStripMenuItem();
             cONSUTAToolStripMenuItem = new ToolStripMenuItem();
             rESISTARVENDASToolStripMenuItem = new ToolStripMenuItem();
             rELATORIOToolStripMenuItem = new ToolStripMenuItem();
             sOBREToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            cATEGORIAToolStripMenuItem = new ToolStripMenuItem();
+            fORNECEDORToolStripMenuItem = new ToolStripMenuItem();
+            pRODUTOToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            fUNCIONARIOToolStripMenuItem = new ToolStripMenuItem();
+            cLIENTEToolStripMenuItem = new ToolStripMenuItem();
+            Menu.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // Menu
             // 
-            resources.ApplyResources(menuStrip1, "menuStrip1");
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { CadastroMenuPrincipal, cONSUTAToolStripMenuItem, rESISTARVENDASToolStripMenuItem, rELATORIOToolStripMenuItem, sOBREToolStripMenuItem });
-            menuStrip1.Name = "menuStrip1";
+            resources.ApplyResources(Menu, "Menu");
+            Menu.ImageScalingSize = new Size(24, 24);
+            Menu.Items.AddRange(new ToolStripItem[] { CadastroMenuPrincipal, cONSUTAToolStripMenuItem, rESISTARVENDASToolStripMenuItem, rELATORIOToolStripMenuItem, sOBREToolStripMenuItem });
+            Menu.Name = "Menu";
             // 
             // CadastroMenuPrincipal
             // 
             resources.ApplyResources(CadastroMenuPrincipal, "CadastroMenuPrincipal");
+            CadastroMenuPrincipal.DropDownItems.AddRange(new ToolStripItem[] { cATEGORIAToolStripMenuItem, fORNECEDORToolStripMenuItem, pRODUTOToolStripMenuItem, toolStripSeparator1, fUNCIONARIOToolStripMenuItem, cLIENTEToolStripMenuItem });
             CadastroMenuPrincipal.Name = "CadastroMenuPrincipal";
             CadastroMenuPrincipal.Click += CadastroMenuPrincipal_Click;
             // 
@@ -71,27 +78,63 @@
             resources.ApplyResources(sOBREToolStripMenuItem, "sOBREToolStripMenuItem");
             sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
             // 
+            // cATEGORIAToolStripMenuItem
+            // 
+            resources.ApplyResources(cATEGORIAToolStripMenuItem, "cATEGORIAToolStripMenuItem");
+            cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
+            // 
+            // fORNECEDORToolStripMenuItem
+            // 
+            resources.ApplyResources(fORNECEDORToolStripMenuItem, "fORNECEDORToolStripMenuItem");
+            fORNECEDORToolStripMenuItem.Name = "fORNECEDORToolStripMenuItem";
+            // 
+            // pRODUTOToolStripMenuItem
+            // 
+            resources.ApplyResources(pRODUTOToolStripMenuItem, "pRODUTOToolStripMenuItem");
+            pRODUTOToolStripMenuItem.Name = "pRODUTOToolStripMenuItem";
+            // 
+            // toolStripSeparator1
+            // 
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            // 
+            // fUNCIONARIOToolStripMenuItem
+            // 
+            resources.ApplyResources(fUNCIONARIOToolStripMenuItem, "fUNCIONARIOToolStripMenuItem");
+            fUNCIONARIOToolStripMenuItem.Name = "fUNCIONARIOToolStripMenuItem";
+            // 
+            // cLIENTEToolStripMenuItem
+            // 
+            resources.ApplyResources(cLIENTEToolStripMenuItem, "cLIENTEToolStripMenuItem");
+            cLIENTEToolStripMenuItem.Name = "cLIENTEToolStripMenuItem";
+            // 
             // FormTelaPrincipal
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(Menu);
+            MainMenuStrip = Menu;
             Name = "FormTelaPrincipal";
             Load += FormTelaPrincipal_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Menu.ResumeLayout(false);
+            Menu.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip Menu;
         private ToolStripMenuItem CadastroMenuPrincipal;
         private ToolStripMenuItem cONSUTAToolStripMenuItem;
         private ToolStripMenuItem rESISTARVENDASToolStripMenuItem;
         private ToolStripMenuItem rELATORIOToolStripMenuItem;
         private ToolStripMenuItem sOBREToolStripMenuItem;
+        private ToolStripMenuItem cATEGORIAToolStripMenuItem;
+        private ToolStripMenuItem fORNECEDORToolStripMenuItem;
+        private ToolStripMenuItem pRODUTOToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem fUNCIONARIOToolStripMenuItem;
+        private ToolStripMenuItem cLIENTEToolStripMenuItem;
     }
 }

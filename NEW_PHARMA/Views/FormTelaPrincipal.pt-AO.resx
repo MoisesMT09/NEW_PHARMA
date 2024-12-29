@@ -118,11 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cATEGORIAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="cATEGORIAToolStripMenuItem.Text" xml:space="preserve">
+    <value>CATEGORIA</value>
+  </data>
+  <data name="fORNECEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="fORNECEDORToolStripMenuItem.Text" xml:space="preserve">
+    <value>FORNECEDOR</value>
+  </data>
+  <data name="pRODUTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="pRODUTOToolStripMenuItem.Text" xml:space="preserve">
+    <value>PRODUTO</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 6</value>
+  </data>
+  <data name="fUNCIONARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="fUNCIONARIOToolStripMenuItem.Text" xml:space="preserve">
+    <value>FUNCIONARIO</value>
+  </data>
+  <data name="cLIENTEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="cLIENTEToolStripMenuItem.Text" xml:space="preserve">
+    <value>CLIENTE</value>
+  </data>
   <data name="CadastroMenuPrincipal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10pt, style=Bold</value>
   </data>
   <data name="CadastroMenuPrincipal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 28</value>
+    <value>133, 27</value>
   </data>
   <data name="CadastroMenuPrincipal.Text" xml:space="preserve">
     <value>CADASTRO</value>
@@ -131,7 +164,7 @@
     <value>Century Gothic, 10pt, style=Bold</value>
   </data>
   <data name="cONSUTAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 28</value>
+    <value>120, 27</value>
   </data>
   <data name="cONSUTAToolStripMenuItem.Text" xml:space="preserve">
     <value>CONSUTA</value>
@@ -140,7 +173,7 @@
     <value>Century Gothic, 10pt, style=Bold</value>
   </data>
   <data name="rESISTARVENDASToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 28</value>
+    <value>193, 27</value>
   </data>
   <data name="rESISTARVENDASToolStripMenuItem.Text" xml:space="preserve">
     <value>RESISTAR VENDAS</value>
@@ -149,7 +182,7 @@
     <value>Century Gothic, 10pt, style=Bold</value>
   </data>
   <data name="rELATORIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 28</value>
+    <value>132, 27</value>
   </data>
   <data name="rELATORIOToolStripMenuItem.Text" xml:space="preserve">
     <value>RELATORIO</value>
@@ -158,23 +191,16 @@
     <value>Century Gothic, 10pt, style=Bold</value>
   </data>
   <data name="sOBREToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 28</value>
+    <value>87, 27</value>
   </data>
   <data name="sOBREToolStripMenuItem.Text" xml:space="preserve">
     <value>SOBRE</value>
   </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 31</value>
   </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 32</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="Menu.Text" xml:space="preserve">
+    <value>TelaPrincipal</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>778, 544</value>
