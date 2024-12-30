@@ -19,14 +19,21 @@ namespace Views
 
         private void FormTelaPrincipal_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void CadastroMenuPrincipal_Click(object sender, EventArgs e)
+        private void CATEGORIAItem_Click(object sender, EventArgs e)
         {
-            FormCadastroDeCategoria formCadastroDeCategoria = new FormCadastroDeCategoria();
-            formCadastroDeCategoria.ShowDialog();
-            formCadastroDeCategoria.Dispose();
+            FormCadastroDeCategoria formCadDeCateg = new FormCadastroDeCategoria();
+            formCadDeCateg.ShowDialog();
+            formCadDeCateg.Dispose();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsultarCategoria consultarCategoria = new FormConsultarCategoria();
+            consultarCategoria.ShowDialog();
+            consultarCategoria.Dispose();
         }
     }
 }

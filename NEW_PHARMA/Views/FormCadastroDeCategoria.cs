@@ -70,25 +70,28 @@ namespace Views
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.LimpaTela();
-            this.AlterarBotoes(2);
+            this.AlterarBotoes(1);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   //Leitura dos dados
                 ModeloCategoria modelo = new ModeloCategoria();
                 modelo.CategNome = txtNome.Text;
+                //Obj para gravar os dados no banco
                 DadosConexao cox = new DadosConexao(DConexao.StringConexao);
                 NegCategoria negCateg = new NegCategoria(cox);
 
                 if (this.Operacao == "INSERIR")
                 {
+                    //Cadastrarm uma categoria
                     negCateg.Incluir(modelo);
                     MessageBox.Show("Cadastro efectuado ID :" + modelo.CategID.ToString());
                 }
                 else
                 {
+                    //Alterar uma categoria
                     modelo.CategID = Convert.ToInt32(txtID.Text);
                     negCateg.Alterar(modelo);
                     MessageBox.Show("Cadastro Altrado");
@@ -103,7 +106,52 @@ namespace Views
         }
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
+            FormConsultarCategoria fCCategoria = new FormConsultarCategoria();
+            fCCategoria.ShowDialog();
+            if (fCCategoria.Codigo != 0)
+            {
+                DadosConexao cox = new DadosConexao(DConexao.StringConexao);
+                NegCategoria negCategoria = new NegCategoria(cox);
+                ModeloCategoria modelo = negCategoria.CarregaModeloCategoria(fCCategoria.Codigo);
+                txtID.Text = modelo.CategID.ToString();
+                txtNome.Text = modelo.CategNome;
+                AlterarBotoes(3);
 
+            }
+            else
+            {
+                this.LimpaTela();
+                this.AlterarBotoes(1);
+            }
+            fCCategoria.Dispose();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            this.Operacao = "ALTERAR";
+            this.AlterarBotoes(2);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dial = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
+                if (dial.ToString() == "Yes")
+                {
+                    DadosConexao cox = new DadosConexao(DConexao.StringConexao);
+                    NegCategoria negCateg = new NegCategoria(cox);
+                    negCateg.Excluir(Convert.ToInt32(txtID.Text));
+                    this.LimpaTela();
+                    this.AlterarBotoes(1);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Impossivel excluir o registro. \n o registro está sendo utilizado em outro local");
+                this.AlterarBotoes(3);
+
+            }
         }
     }
 }

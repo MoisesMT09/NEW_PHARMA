@@ -20,8 +20,8 @@ namespace Dados
         }
         public String StringConexao1
         {
-            get { return this.StringConexao1; }
-            set { this.StringConexao1 = value; }
+            get { return this.StringConexao; }
+            set { this.StringConexao = value; }
         }
 
         public SqlConnection ObjectoConexao

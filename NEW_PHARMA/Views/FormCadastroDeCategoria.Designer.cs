@@ -66,6 +66,7 @@
             btnExcluir.TabIndex = 5;
             btnExcluir.Text = "EXCLUIR\r\n";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnCancelar
             // 
@@ -98,6 +99,7 @@
             btnAlterar.TabIndex = 1;
             btnAlterar.Text = "ALTERAR";
             btnAlterar.UseVisualStyleBackColor = true;
+            btnAlterar.Click += btnAlterar_Click;
             // 
             // btnLocalizar
             // 
@@ -157,7 +159,7 @@
             txtNome.Location = new Point(46, 193);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(555, 32);
-            txtNome.TabIndex = 0;
+            txtNome.TabIndex = 1;
             // 
             // txtID
             // 
@@ -165,7 +167,7 @@
             txtID.Location = new Point(46, 78);
             txtID.Name = "txtID";
             txtID.Size = new Size(313, 32);
-            txtID.TabIndex = 0;
+            txtID.TabIndex = 1;
             // 
             // FormCadastroDeCategoria
             // 
@@ -175,8 +177,11 @@
             Controls.Add(pnBotao);
             Controls.Add(pnDados);
             Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormCadastroDeCategoria";
+            RightToLeft = RightToLeft.No;
+            RightToLeftLayout = true;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro De Categoria";
             Load += FormCadastroDeCategoria_Load;

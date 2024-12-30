@@ -9,7 +9,6 @@ C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Vie
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Views.runtimeconfig.json
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Views.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Views.pdb
-C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\pt-AO\Views.resources.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Azure.Core.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Azure.Identity.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
@@ -72,12 +71,11 @@ C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Vie
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormCadastroDeCategoria.resources
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormModeloDeCadastro.resources
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormTelaPrincipal.resources
-C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormTelaPrincipal.pt-AO.resources
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.csproj.GenerateResource.cache
-C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\pt-AO\Views.resources.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.csproj.Up2Date
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\refint\Views.dll
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.pdb
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.genruntimeconfig.cache
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\ref\Views.dll
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormConsultarCategoria.resources
