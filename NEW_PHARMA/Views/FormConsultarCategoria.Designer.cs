@@ -50,6 +50,7 @@
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(591, 31);
             txtCategoria.TabIndex = 1;
+            txtCategoria.TextChanged += txtCategoria_TextChanged;
             // 
             // btnLocalizar
             // 

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dados;
 using Negocio;
+using Modelo;
 
 namespace Views
 {
     public partial class FormConsultarCategoria : Form
     {
-        public int Codigo = 0;
+        public int Codigo = 1; // Alterado para iniciar em 1
+
 
         public FormConsultarCategoria()
         {
@@ -28,14 +30,14 @@ namespace Views
             // Verifica se há dados no DataGridView antes de configurar as colunas
             if (dgvDados.DataSource != null && dgvDados.Rows.Count > 0)
             {
-                dgvDados.Columns[0].HeaderText = "*Código*";
+                dgvDados.Columns[0].HeaderText = "Código";
                 dgvDados.Columns[0].Width = 100;
                 dgvDados.Columns[1].HeaderText = "Categoria";
                 dgvDados.Columns[1].Width = 700;
             }
             else
             {
-                MessageBox.Show("Sem dados para configurar o grid.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sem dados para serem configurados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -59,6 +61,15 @@ namespace Views
 
                 // Exibir os dados no DataGridView
                 dgvDados.DataSource = resultado;
+
+                // Configurar as colunas após a carga dos dados
+                if (dgvDados.Rows.Count >= 0)
+                {
+                    dgvDados.Columns[0].HeaderText = "Código";
+                    dgvDados.Columns[0].Width = 100;
+                    dgvDados.Columns[1].HeaderText = "Categoria";
+                    dgvDados.Columns[1].Width = 700;
+                }
             }
             catch (Exception ex)
             {
@@ -67,19 +78,23 @@ namespace Views
             }
         }
 
-
         private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)  // Corrigido para verificar que a linha selecionada é válida
             {
-
                 this.Codigo = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
                 this.Close();
             }
+        }
+
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

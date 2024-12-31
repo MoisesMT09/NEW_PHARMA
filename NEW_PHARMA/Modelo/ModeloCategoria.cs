@@ -8,6 +8,18 @@ namespace Modelo
 {
     public class ModeloCategoria
     {
+
+        public ModeloCategoria() 
+        {     
+            this.CategNome = "";
+        }
+
+        public ModeloCategoria(int CategID, String CategNome)
+        {
+            this.CategID = ID;
+            this.CategNome = Nome;
+        }
+
         private int ID;
 
         public int CategID

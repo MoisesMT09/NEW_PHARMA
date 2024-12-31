@@ -72,58 +72,72 @@ namespace Views
             this.LimpaTela();
             this.AlterarBotoes(1);
         }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
+            private void btnSalvar_Click(object sender, EventArgs e)
+            {
             try
-            {   //Leitura dos dados
-                ModeloCategoria modelo = new ModeloCategoria();
-                modelo.CategNome = txtNome.Text;
-                //Obj para gravar os dados no banco
+            {
+                // Leitura dos dados
+                ModeloCategoria modelo = new ModeloCategoria
+                {
+                    CategNome = txtNome.Text
+                };
+
+                // Objeto para gravar os dados no banco
                 DadosConexao cox = new DadosConexao(DConexao.StringConexao);
                 NegCategoria negCateg = new NegCategoria(cox);
 
                 if (this.Operacao == "INSERIR")
                 {
-                    //Cadastrarm uma categoria
+                    // Cadastrar uma categoria
                     negCateg.Incluir(modelo);
-                    MessageBox.Show("Cadastro efectuado ID :" + modelo.CategID.ToString());
+                    MessageBox.Show("Cadastro efectuado ID: " + modelo.CategID.ToString());
+
+                    // Preenche os campos com os dados inseridos
+                    txtID.Text = modelo.CategID.ToString();
+                    txtNome.Text = modelo.CategNome;
+
+                    AlterarBotoes(1); // Estado de edição
                 }
                 else
                 {
-                    //Alterar uma categoria
+                    // Alterar uma categoria
                     modelo.CategID = Convert.ToInt32(txtID.Text);
                     negCateg.Alterar(modelo);
-                    MessageBox.Show("Cadastro Altrado");
+                    MessageBox.Show("Cadastro Alterado");
                 }
                 this.LimpaTela();
                 this.AlterarBotoes(1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Erro: " + ex.Message);
             }
+        
+
         }
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-            FormConsultarCategoria fCCategoria = new FormConsultarCategoria();
-            fCCategoria.ShowDialog();
-            if (fCCategoria.Codigo != 0)
+            using (FormConsultarCategoria fCCategoria = new FormConsultarCategoria())
             {
                 DadosConexao cox = new DadosConexao(DConexao.StringConexao);
                 NegCategoria negCategoria = new NegCategoria(cox);
                 ModeloCategoria modelo = negCategoria.CarregaModeloCategoria(fCCategoria.Codigo);
-                txtID.Text = modelo.CategID.ToString();
-                txtNome.Text = modelo.CategNome;
-                AlterarBotoes(3);
+                fCCategoria.ShowDialog();
+                if (fCCategoria.Codigo != 0)
+                {
+                    
+                    txtID.Text = modelo.CategID.ToString();
+                    txtNome.Text = modelo.CategNome;
+                    AlterarBotoes(3);
 
+                }
+                else
+                {
+                    LimpaTela();
+                    AlterarBotoes(1);
+                }
             }
-            else
-            {
-                this.LimpaTela();
-                this.AlterarBotoes(1);
-            }
-            fCCategoria.Dispose();
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
