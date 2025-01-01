@@ -70,7 +70,7 @@
             dgvDados.ReadOnly = true;
             dgvDados.RowHeadersWidth = 62;
             dgvDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDados.Size = new Size(754, 398);
+            dgvDados.Size = new Size(776, 454);
             dgvDados.TabIndex = 28;
             dgvDados.CellContentClick += dgvDados_CellContentClick;
             dgvDados.CellContentDoubleClick += dgvDados_CellContentDoubleClick;
@@ -78,9 +78,9 @@
             // btnLocalizar
             // 
             btnLocalizar.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLocalizar.Location = new Point(609, 81);
+            btnLocalizar.Location = new Point(640, 86);
             btnLocalizar.Name = "btnLocalizar";
-            btnLocalizar.Size = new Size(157, 34);
+            btnLocalizar.Size = new Size(148, 29);
             btnLocalizar.TabIndex = 27;
             btnLocalizar.Text = "Localizar";
             btnLocalizar.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             txtFornecedor.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFornecedor.Location = new Point(12, 86);
             txtFornecedor.Name = "txtFornecedor";
-            txtFornecedor.Size = new Size(591, 29);
+            txtFornecedor.Size = new Size(607, 29);
             txtFornecedor.TabIndex = 26;
             // 
             // label2
@@ -108,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 544);
+            ClientSize = new Size(800, 600);
             Controls.Add(pictureBox1);
             Controls.Add(dgvDados);
             Controls.Add(btnLocalizar);

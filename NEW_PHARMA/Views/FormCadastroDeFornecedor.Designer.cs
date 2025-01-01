@@ -98,15 +98,15 @@
             pnBotao.Controls.Add(btnAlterar);
             pnBotao.Controls.Add(btnLocalizar);
             pnBotao.Controls.Add(btnInserir);
-            pnBotao.Location = new Point(12, 401);
+            pnBotao.Location = new Point(12, 457);
             pnBotao.Name = "pnBotao";
-            pnBotao.Size = new Size(755, 120);
+            pnBotao.Size = new Size(776, 120);
             pnBotao.TabIndex = 21;
             // 
             // btnExcluir
             // 
             btnExcluir.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnExcluir.Location = new Point(276, 17);
+            btnExcluir.Location = new Point(263, 17);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(82, 82);
             btnExcluir.TabIndex = 11;
@@ -117,7 +117,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnCancelar.Location = new Point(641, 17);
+            btnCancelar.Location = new Point(624, 17);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 82);
             btnCancelar.TabIndex = 10;
@@ -128,7 +128,7 @@
             // btnSalvar
             // 
             btnSalvar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnSalvar.Location = new Point(519, 17);
+            btnSalvar.Location = new Point(506, 17);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(82, 82);
             btnSalvar.TabIndex = 9;
@@ -139,7 +139,7 @@
             // btnAlterar
             // 
             btnAlterar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnAlterar.Location = new Point(397, 17);
+            btnAlterar.Location = new Point(381, 17);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(82, 82);
             btnAlterar.TabIndex = 8;
@@ -150,7 +150,7 @@
             // btnLocalizar
             // 
             btnLocalizar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnLocalizar.Location = new Point(155, 17);
+            btnLocalizar.Location = new Point(140, 17);
             btnLocalizar.Name = "btnLocalizar";
             btnLocalizar.Size = new Size(82, 82);
             btnLocalizar.TabIndex = 6;
@@ -161,7 +161,7 @@
             // btnInserir
             // 
             btnInserir.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
-            btnInserir.Location = new Point(32, 17);
+            btnInserir.Location = new Point(22, 17);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(82, 82);
             btnInserir.TabIndex = 7;
@@ -187,7 +187,7 @@
             pnDados.Controls.Add(label1);
             pnDados.Location = new Point(12, 53);
             pnDados.Name = "pnDados";
-            pnDados.Size = new Size(754, 329);
+            pnDados.Size = new Size(776, 386);
             pnDados.TabIndex = 22;
             // 
             // txtTelefone
@@ -295,7 +295,7 @@
             // 
             pictureBox1.BackColor = Color.Red;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(733, 10);
+            pictureBox1.Location = new Point(755, 10);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 33);
             pictureBox1.TabIndex = 23;
@@ -306,7 +306,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 544);
+            ClientSize = new Size(800, 600);
             Controls.Add(pictureBox1);
             Controls.Add(pnDados);
             Controls.Add(pnBotao);
