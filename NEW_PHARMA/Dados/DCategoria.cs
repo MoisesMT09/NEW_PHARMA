@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows;
 
 
-
 namespace Dados
 {
     public class DCategoria
@@ -21,27 +20,25 @@ namespace Dados
             this.conexao = cox;
         }
 
+        // Método para incluir uma categoria
         public void Incluir(ModeloCategoria modelo)
         {
             try
             {
-                // Configuração do comando
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.Connection = conexao.ObjectoConexao; // Garantir que a conexão foi inicializada
-                    cmd.CommandText = "INSERT INTO Categoria (Nome) VALUES (@Nome); SELECT SCOPE_IDENTITY();";
+                    cmd.Connection = conexao.ObjectoConexao;
+                    cmd.CommandText = "INSERT INTO tbCategoria (Nome) VALUES (@Nome); SELECT SCOPE_IDENTITY();";
 
-                    // Configurando o parâmetro explicitamente
+                    // Usando a variável CategNome do modelo para inserir no banco
                     cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = modelo.CategNome;
 
-                    // Abrindo conexão com tratamento adequado
                     conexao.AbrirConexao();
 
-                    // Executando o comando e verificando o resultado
                     object result = cmd.ExecuteScalar();
                     if (result != null && int.TryParse(result.ToString(), out int id))
                     {
-                        modelo.CategID = id; // Armazena o ID gerado
+                        modelo.CategID = id; // Armazena o ID gerado após a inserção
                     }
                     else
                     {
@@ -51,89 +48,110 @@ namespace Dados
             }
             catch (Exception ex)
             {
-                // Log ou tratamento de erro
                 Console.WriteLine($"Erro ao inserir na tabela Categoria: {ex.Message}");
             }
             finally
             {
-                // Fechar a conexão de forma segura
                 conexao.FecharConexao();
             }
-
         }
 
+        // Método para alterar uma categoria
         public void Alterar(ModeloCategoria modelo)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conexao.ObjectoConexao;
-            cmd.CommandText = "UPDATE tbCategoria SET Nome = @Nome WHERE ID = @ID";
-            cmd.Parameters.AddWithValue("@Nome", modelo.CategNome);
-            cmd.Parameters.AddWithValue("@ID", modelo.CategID);
-            conexao.AbrirConexao();
-            cmd.ExecuteNonQuery();
-            conexao.FecharConexao();
-        }
-
-        public void Excluir(int Codigo)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conexao.ObjectoConexao;
-            cmd.CommandText = "DELETE FROM tbCategoria WHERE ID = @ID";
-            cmd.Parameters.AddWithValue("@ID", Codigo);
-            conexao.AbrirConexao();
-            cmd.ExecuteNonQuery();
-            conexao.FecharConexao();
-        }
-
-        public DataTable Localizar(String valor)
-        {
-            System.Data.DataTable tabela = new System.Data.DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbCategoria WHERE Nome LIKE '%" + valor + "%'", selectConnectionString: conexao.StringConexao1);
-            da.Fill(tabela);
-            return tabela;
-
-        }
-
-        public ModeloCategoria CarregaModeloCategoria(int Codigo)
-        {
-
-            ModeloCategoria modelo = null; // Inicializa o modelo como nulo
-
             try
             {
-                // Definindo o comando SQL
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conexao.ObjectoConexao;
+                    cmd.CommandText = "UPDATE tbCategoria SET Nome = @Nome WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@Nome", modelo.CategNome); // Usando CategNome
+                    cmd.Parameters.AddWithValue("@ID", modelo.CategID); // Usando CategID
+
+                    conexao.AbrirConexao();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao alterar categoria: {ex.Message}");
+            }
+            finally
+            {
+                conexao.FecharConexao();
+            }
+        }
+
+        // Método para excluir uma categoria
+        public void Excluir(int Codigo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conexao.ObjectoConexao;
+                    cmd.CommandText = "DELETE FROM tbCategoria WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", Codigo);
+
+                    conexao.AbrirConexao();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao excluir categoria: {ex.Message}");
+            }
+            finally
+            {
+                conexao.FecharConexao();
+            }
+        }
+
+        // Método para localizar categorias com base no nome
+        public DataTable Localizar(string valor)
+        {
+            DataTable tabela = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM tbCategoria WHERE Nome LIKE @valor";
+                using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@valor", "%" + valor + "%");
+                    da.Fill(tabela);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao localizar categoria: {ex.Message}");
+            }
+            return tabela;
+        }
+
+        // Método para carregar uma categoria por ID
+        public ModeloCategoria CarregaModeloCategoria(int Codigo)
+        {
+            ModeloCategoria modelo = null;
+            try
+            {
                 string query = "SELECT * FROM tbCategoria WHERE ID = @ID";
 
-                // Abrindo a conexão
-                using (SqlConnection conexao = new SqlConnection(DConexao.StringConexao))
+                using (SqlConnection conn = new SqlConnection(conexao.StringConexao1))
                 {
-                    using (SqlCommand cmd = new SqlCommand(query, conexao))
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Adicionando o parâmetro com tipo explícito
-                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = Codigo;
+                        cmd.Parameters.AddWithValue("@ID", Codigo);
 
-                        // Abrindo a conexão
-                        conexao.Open();
-
-                        // Executando a consulta
+                        conn.Open();
                         using (SqlDataReader registro = cmd.ExecuteReader())
                         {
-                            // Verifica se há registros
                             if (registro.HasRows)
                             {
-                                registro.Read(); // Lê a primeira linha do resultado
-
-                                // Inicializa o modelo e atribui os valores
+                                registro.Read();
                                 modelo = new ModeloCategoria
                                 {
-                                    CategID = Convert.ToInt32(registro["ID"]),
-                                    CategNome = Convert.ToString(registro["Nome"])
+                                    CategID = Convert.ToInt32(registro["ID"]), // Usando CategID
+                                    CategNome = Convert.ToString(registro["Nome"]) // Usando CategNome
                                 };
-                            }
-                            else
-                            {
-                                // Caso não encontre dados, você pode decidir o que fazer (opcional)
-                                Console.WriteLine("Nenhuma categoria encontrada.");
                             }
                         }
                     }
@@ -141,12 +159,9 @@ namespace Dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao buscar os dados da categoria.");
+                Console.WriteLine($"Erro ao carregar categoria: {ex.Message}");
             }
-
-            return modelo; // Retorna o modelo com os dados ou nulo caso não tenha encontrado
+            return modelo;
         }
-
     }
- 
 }
