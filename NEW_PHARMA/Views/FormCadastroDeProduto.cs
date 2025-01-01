@@ -230,6 +230,13 @@ namespace Views
             AlterarBotoes(1); // Retorna ao estado inicial
         }
 
+        private void pbVoltar_Click(object sender, EventArgs e)
+        {
+            // Retornar ao FormTelaPrincipal
+            FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
+            this.Hide();
+            telaPrincipal.Show();
+        }
     }
 }
 

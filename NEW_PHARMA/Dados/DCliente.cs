@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Modelo;
 using System.Data;
+using Modelo;
 
 namespace Dados
 {
