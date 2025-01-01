@@ -4,7 +4,13 @@
     <Compile Update="FormCadastroDeCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormCadastroDeFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormConsultarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormConsultarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormModeloDeCadastro.cs">

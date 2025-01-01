@@ -35,5 +35,53 @@ namespace Views
             consultarCategoria.ShowDialog();
             consultarCategoria.Dispose();
         }
+
+        private void fORNECEDORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeFornecedor cadastroFornecedor = new FormCadastroDeFornecedor())
+            {
+                cadastroFornecedor.ShowDialog();
+            }
+        }
+
+        private void fORNECEDORToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormConsultarFornecedor consultarFornecedor = new FormConsultarFornecedor())
+            {
+                consultarFornecedor.ShowDialog();
+            }
+        }
+
+        private void fORNECEDORToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ptInicial_Click(object sender, EventArgs e)
+        {
+
+            // Ocultar o formulário atual
+            this.Hide();
+
+            // Instanciar o formulário de apresentação (se necessário)
+            FormTelaDeApresentacao telaApresentacao = new FormTelaDeApresentacao();
+
+            // Exibir o formulário de apresentação
+            telaApresentacao.Show();
+
+            // Opcional: Fechar o formulário atual ao voltar à tela inicial
+            // this.Close();
+        }
+
     }
 }

@@ -50,7 +50,7 @@ namespace Views
                 NegCategoria negCateg = new NegCategoria(cox);
 
                 // Buscar os dados com base no texto informado
-                var resultado = negCateg.Localizar(txtCategoria.Text);
+                var resultado = negCateg.Localizar(txtForncedor.Text);
 
                 // Verificar se existem dados no resultado
                 if (resultado == null || resultado.Rows.Count == 0)
@@ -95,6 +95,12 @@ namespace Views
         private void txtCategoria_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário atual
+            this.Close();
         }
     }
 }

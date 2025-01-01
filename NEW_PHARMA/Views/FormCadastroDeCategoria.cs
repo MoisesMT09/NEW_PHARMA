@@ -72,8 +72,8 @@ namespace Views
             this.LimpaTela();
             this.AlterarBotoes(1);
         }
-            private void btnSalvar_Click(object sender, EventArgs e)
-            {
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
             try
             {
                 // Leitura dos dados
@@ -112,7 +112,7 @@ namespace Views
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        
+
 
         }
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace Views
                 fCCategoria.ShowDialog();
                 if (fCCategoria.Codigo != 0)
                 {
-                    
+
                     txtID.Text = modelo.CategID.ToString();
                     txtNome.Text = modelo.CategNome;
                     AlterarBotoes(3);
@@ -167,5 +167,12 @@ namespace Views
 
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Fecha o formulário atual
+            this.Close();
+        }
+
     }
 }

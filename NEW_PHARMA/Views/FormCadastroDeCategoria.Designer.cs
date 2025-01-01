@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroDeCategoria));
             pnBotao = new Panel();
             btnExcluir = new Button();
             btnCancelar = new Button();
@@ -40,12 +41,16 @@
             label1 = new Label();
             txtNome = new TextBox();
             txtID = new TextBox();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
             pnBotao.SuspendLayout();
             pnDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnBotao
             // 
+            pnBotao.BorderStyle = BorderStyle.FixedSingle;
             pnBotao.Controls.Add(btnExcluir);
             pnBotao.Controls.Add(btnCancelar);
             pnBotao.Controls.Add(btnSalvar);
@@ -59,7 +64,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnExcluir.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnExcluir.Location = new Point(277, 19);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(82, 82);
@@ -70,7 +75,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnCancelar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnCancelar.Location = new Point(640, 19);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 82);
@@ -81,7 +86,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnSalvar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnSalvar.Location = new Point(519, 19);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(82, 82);
@@ -92,7 +97,7 @@
             // 
             // btnAlterar
             // 
-            btnAlterar.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnAlterar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnAlterar.Location = new Point(398, 19);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(82, 82);
@@ -103,18 +108,18 @@
             // 
             // btnLocalizar
             // 
-            btnLocalizar.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnLocalizar.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnLocalizar.Location = new Point(156, 19);
             btnLocalizar.Name = "btnLocalizar";
             btnLocalizar.Size = new Size(82, 82);
-            btnLocalizar.TabIndex = 0;
+            btnLocalizar.TabIndex = 1;
             btnLocalizar.Text = "LOCALIZAR";
             btnLocalizar.UseVisualStyleBackColor = true;
             btnLocalizar.Click += btnLocalizar_Click;
             // 
             // btnInserir
             // 
-            btnInserir.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnInserir.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
             btnInserir.Location = new Point(35, 19);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(82, 82);
@@ -125,38 +130,39 @@
             // 
             // pnDados
             // 
+            pnDados.BorderStyle = BorderStyle.FixedSingle;
             pnDados.Controls.Add(label2);
             pnDados.Controls.Add(label1);
             pnDados.Controls.Add(txtNome);
             pnDados.Controls.Add(txtID);
-            pnDados.Location = new Point(12, 12);
+            pnDados.Location = new Point(12, 57);
             pnDados.Name = "pnDados";
-            pnDados.Size = new Size(755, 390);
+            pnDados.Size = new Size(755, 345);
             pnDados.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            label2.Location = new Point(52, 152);
+            label2.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
+            label2.Location = new Point(46, 173);
             label2.Name = "label2";
-            label2.Size = new Size(70, 23);
+            label2.Size = new Size(81, 25);
             label2.TabIndex = 1;
             label2.Text = "NOME";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            label1.Location = new Point(52, 31);
+            label1.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold);
+            label1.Location = new Point(46, 76);
             label1.Name = "label1";
-            label1.Size = new Size(30, 23);
+            label1.Size = new Size(38, 25);
             label1.TabIndex = 1;
             label1.Text = "ID";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(46, 193);
+            txtNome.Location = new Point(46, 201);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(555, 32);
             txtNome.TabIndex = 1;
@@ -164,20 +170,43 @@
             // txtID
             // 
             txtID.Enabled = false;
-            txtID.Location = new Point(46, 78);
+            txtID.Location = new Point(46, 104);
             txtID.Name = "txtID";
             txtID.Size = new Size(313, 32);
             txtID.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label3.Location = new Point(230, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(313, 25);
+            label3.TabIndex = 4;
+            label3.Text = "CADASTRO DE CATEGORIA";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Red;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(734, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 33);
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // FormCadastroDeCategoria
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 544);
+            Controls.Add(pictureBox1);
+            Controls.Add(label3);
             Controls.Add(pnBotao);
             Controls.Add(pnDados);
             Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormCadastroDeCategoria";
             RightToLeft = RightToLeft.No;
@@ -188,7 +217,9 @@
             pnBotao.ResumeLayout(false);
             pnDados.ResumeLayout(false);
             pnDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -205,5 +236,7 @@
         private Label label1;
         private TextBox txtNome;
         private TextBox txtID;
+        private Label label3;
+        private PictureBox pictureBox1;
     }
 }

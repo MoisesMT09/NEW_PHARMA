@@ -24,7 +24,17 @@ namespace Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Ocultar o formulário atual
+            this.Hide();
 
+            // Instanciar o formulário principal
+            FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
+
+            // Exibir o formulário principal
+            telaPrincipal.Show();
+
+            // Opcional: Fechar o formulário atual ao ir para a tela principal
+            // this.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -35,6 +45,12 @@ namespace Views
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Fecha NEW_PHARMA
+            this.Close();
         }
     }
 }
