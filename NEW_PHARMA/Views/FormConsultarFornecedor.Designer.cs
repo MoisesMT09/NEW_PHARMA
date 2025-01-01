@@ -30,35 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultarFornecedor));
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             dgvDados = new DataGridView();
             btnLocalizar = new Button();
             txtFornecedor = new TextBox();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pbVoltar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(229, 20);
+            label1.Location = new Point(225, 20);
             label1.Name = "label1";
             label1.Size = new Size(339, 25);
             label1.TabIndex = 0;
             label1.Text = "CONSULTA DE FORNECEDOR";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(733, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.TabIndex = 29;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // dgvDados
             // 
@@ -74,6 +63,7 @@
             dgvDados.TabIndex = 28;
             dgvDados.CellContentClick += dgvDados_CellContentClick;
             dgvDados.CellContentDoubleClick += dgvDados_CellContentDoubleClick;
+            dgvDados.CellDoubleClick += dgvDados_CellDoubleClick;
             // 
             // btnLocalizar
             // 
@@ -104,12 +94,21 @@
             label2.TabIndex = 25;
             label2.Text = "Fornecedor";
             // 
+            // pbVoltar
+            // 
+            pbVoltar.Image = (Image)resources.GetObject("pbVoltar.Image");
+            pbVoltar.Location = new Point(12, 10);
+            pbVoltar.Name = "pbVoltar";
+            pbVoltar.Size = new Size(39, 35);
+            pbVoltar.TabIndex = 34;
+            pbVoltar.TabStop = false;
+            // 
             // FormConsultarFornecedor
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 600);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbVoltar);
             Controls.Add(dgvDados);
             Controls.Add(btnLocalizar);
             Controls.Add(txtFornecedor);
@@ -119,8 +118,9 @@
             Name = "FormConsultarFornecedor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormConsultarFornecedor";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Load += FormConsultarFornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDados).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,10 +128,10 @@
         #endregion
 
         private Label label1;
-        private PictureBox pictureBox1;
         private DataGridView dgvDados;
         private Button btnLocalizar;
         private TextBox txtFornecedor;
         private Label label2;
+        private PictureBox pbVoltar;
     }
 }

@@ -95,6 +95,14 @@ namespace Views
 
         private void dgvDados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void FormConsultarFornecedor_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
             if (e.RowIndex >= 0) // Verifica se a linha clicada é válida
             {
@@ -112,7 +120,6 @@ namespace Views
                 }
             }
         }
-
     }
 }
 

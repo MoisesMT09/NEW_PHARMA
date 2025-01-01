@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroDeProduto));
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             btnExcluir = new Button();
             btnSalvar = new Button();
             btnAlterar = new Button();
@@ -54,7 +53,6 @@
             label4 = new Label();
             label3 = new Label();
             label7 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnBotao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptInicial).BeginInit();
             pnDados.SuspendLayout();
@@ -69,17 +67,6 @@
             label1.Size = new Size(292, 25);
             label1.TabIndex = 0;
             label1.Text = "CADASTRO DE PRODUTO";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(755, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnExcluir
             // 
@@ -328,7 +315,6 @@
             ClientSize = new Size(800, 600);
             Controls.Add(pnDados);
             Controls.Add(pnBotao);
-            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -336,7 +322,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro De Produto";
             Load += FormCadastroDeProduto_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnBotao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ptInicial).EndInit();
             pnDados.ResumeLayout(false);
@@ -348,7 +333,6 @@
         #endregion
 
         private Label label1;
-        private PictureBox pictureBox1;
         private Button btnExcluir;
         private Button btnSalvar;
         private Button btnAlterar;

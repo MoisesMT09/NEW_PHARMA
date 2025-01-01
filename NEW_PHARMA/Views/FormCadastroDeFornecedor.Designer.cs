@@ -51,10 +51,10 @@
             label2 = new Label();
             txtID = new TextBox();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
+            pbVoltar = new PictureBox();
             pnBotao.SuspendLayout();
             pnDados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -185,9 +185,9 @@
             pnDados.Controls.Add(label2);
             pnDados.Controls.Add(txtID);
             pnDados.Controls.Add(label1);
-            pnDados.Location = new Point(12, 53);
+            pnDados.Location = new Point(12, 65);
             pnDados.Name = "pnDados";
-            pnDados.Size = new Size(776, 386);
+            pnDados.Size = new Size(776, 374);
             pnDados.TabIndex = 22;
             // 
             // txtTelefone
@@ -291,23 +291,21 @@
             label1.TabIndex = 21;
             label1.Text = "ID";
             // 
-            // pictureBox1
+            // pbVoltar
             // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(755, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.TabIndex = 23;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pbVoltar.Image = (Image)resources.GetObject("pbVoltar.Image");
+            pbVoltar.Location = new Point(12, 12);
+            pbVoltar.Name = "pbVoltar";
+            pbVoltar.Size = new Size(39, 35);
+            pbVoltar.TabIndex = 35;
+            pbVoltar.TabStop = false;
             // 
             // FormCadastroDeFornecedor
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 600);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbVoltar);
             Controls.Add(pnDados);
             Controls.Add(pnBotao);
             Controls.Add(label7);
@@ -320,7 +318,7 @@
             pnBotao.ResumeLayout(false);
             pnDados.ResumeLayout(false);
             pnDados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -354,6 +352,6 @@
         private Label label2;
         private TextBox txtID;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox pbVoltar;
     }
 }
