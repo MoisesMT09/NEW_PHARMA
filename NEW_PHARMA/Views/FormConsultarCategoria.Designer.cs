@@ -34,9 +34,9 @@
             btnLocalizar = new Button();
             dgvDados = new DataGridView();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
+            pbVoltar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,14 +54,14 @@
             txtForncedor.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtForncedor.Location = new Point(12, 86);
             txtForncedor.Name = "txtForncedor";
-            txtForncedor.Size = new Size(591, 29);
+            txtForncedor.Size = new Size(613, 29);
             txtForncedor.TabIndex = 1;
             txtForncedor.TextChanged += txtCategoria_TextChanged;
             // 
             // btnLocalizar
             // 
             btnLocalizar.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLocalizar.Location = new Point(609, 84);
+            btnLocalizar.Location = new Point(631, 86);
             btnLocalizar.Name = "btnLocalizar";
             btnLocalizar.Size = new Size(157, 34);
             btnLocalizar.TabIndex = 2;
@@ -79,7 +79,7 @@
             dgvDados.ReadOnly = true;
             dgvDados.RowHeadersWidth = 62;
             dgvDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDados.Size = new Size(754, 398);
+            dgvDados.Size = new Size(776, 454);
             dgvDados.TabIndex = 3;
             dgvDados.CellContentClick += dgvDados_CellContentClick;
             dgvDados.CellDoubleClick += dgvDados_CellDoubleClick;
@@ -94,23 +94,22 @@
             label2.TabIndex = 4;
             label2.Text = "CONSULTA DE CATEGORIA";
             // 
-            // pictureBox1
+            // pbVoltar
             // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(733, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pbVoltar.Image = (Image)resources.GetObject("pbVoltar.Image");
+            pbVoltar.Location = new Point(12, 19);
+            pbVoltar.Name = "pbVoltar";
+            pbVoltar.Size = new Size(39, 35);
+            pbVoltar.TabIndex = 35;
+            pbVoltar.TabStop = false;
+            pbVoltar.Click += pbVoltar_Click;
             // 
             // FormConsultarCategoria
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 544);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(800, 600);
+            Controls.Add(pbVoltar);
             Controls.Add(label2);
             Controls.Add(dgvDados);
             Controls.Add(btnLocalizar);
@@ -122,7 +121,7 @@
             Text = "Consultar Categoria";
             Load += FormConsultarCategoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,6 +133,6 @@
         private Button btnLocalizar;
         private DataGridView dgvDados;
         private Label label2;
-        private PictureBox pictureBox1;
+        private PictureBox pbVoltar;
     }
 }

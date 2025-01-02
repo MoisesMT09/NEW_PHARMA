@@ -42,10 +42,10 @@
             txtNome = new TextBox();
             txtID = new TextBox();
             label3 = new Label();
-            pictureBox1 = new PictureBox();
+            pbVoltar = new PictureBox();
             pnBotao.SuspendLayout();
             pnDados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             SuspendLayout();
             // 
             // pnBotao
@@ -57,9 +57,9 @@
             pnBotao.Controls.Add(btnAlterar);
             pnBotao.Controls.Add(btnLocalizar);
             pnBotao.Controls.Add(btnInserir);
-            pnBotao.Location = new Point(12, 416);
+            pnBotao.Location = new Point(12, 468);
             pnBotao.Name = "pnBotao";
-            pnBotao.Size = new Size(755, 120);
+            pnBotao.Size = new Size(776, 120);
             pnBotao.TabIndex = 3;
             // 
             // btnExcluir
@@ -135,9 +135,9 @@
             pnDados.Controls.Add(label1);
             pnDados.Controls.Add(txtNome);
             pnDados.Controls.Add(txtID);
-            pnDados.Location = new Point(12, 57);
+            pnDados.Location = new Point(12, 75);
             pnDados.Name = "pnDados";
-            pnDados.Size = new Size(755, 345);
+            pnDados.Size = new Size(776, 372);
             pnDados.TabIndex = 2;
             // 
             // label2
@@ -185,23 +185,22 @@
             label3.TabIndex = 4;
             label3.Text = "CADASTRO DE CATEGORIA";
             // 
-            // pictureBox1
+            // pbVoltar
             // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(734, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pbVoltar.Image = (Image)resources.GetObject("pbVoltar.Image");
+            pbVoltar.Location = new Point(12, 10);
+            pbVoltar.Name = "pbVoltar";
+            pbVoltar.Size = new Size(39, 35);
+            pbVoltar.TabIndex = 34;
+            pbVoltar.TabStop = false;
+            pbVoltar.Click += pbVoltar_Click;
             // 
             // FormCadastroDeCategoria
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 544);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(800, 600);
+            Controls.Add(pbVoltar);
             Controls.Add(label3);
             Controls.Add(pnBotao);
             Controls.Add(pnDados);
@@ -217,7 +216,7 @@
             pnBotao.ResumeLayout(false);
             pnDados.ResumeLayout(false);
             pnDados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,6 +236,6 @@
         private TextBox txtNome;
         private TextBox txtID;
         private Label label3;
-        private PictureBox pictureBox1;
+        private PictureBox pbVoltar;
     }
 }

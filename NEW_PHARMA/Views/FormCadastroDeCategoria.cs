@@ -174,5 +174,12 @@ namespace Views
             this.Close();
         }
 
+        private void pbVoltar_Click(object sender, EventArgs e)
+        {
+            // Retornar ao FormTelaPrincipal
+            FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
+            this.Hide();
+            telaPrincipal.Show();
+        }
     }
 }

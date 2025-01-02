@@ -20,17 +20,32 @@ namespace Negocio
 
         public void Incluir(ModeloFuncionario modelo)
         {
-            if (modelo.NomeFuncionario.Trim().Length == 0)
-                throw new Exception("O nome do funcionário é obrigatório.");
-            if (modelo.NumBI.Trim().Length == 0)
-                throw new Exception("O número do BI é obrigatório.");
-            if (modelo.EmailFuncionario.Trim().Length == 0)
-                throw new Exception("O e-mail do funcionário é obrigatório.");
-            if (modelo.EnderecoFuncionario.Trim().Length == 0)
-                throw new Exception("O endereço do funcionário é obrigatório.");
-            if (modelo.TelefoneFuncionario.Trim().Length == 0)
-                throw new Exception("O telefone do funcionário é obrigatório.");
 
+            // Validação: Nome do Funcionário
+            if (string.IsNullOrWhiteSpace(modelo.NomeFuncionario))
+                throw new Exception("O nome do funcionário é obrigatório.");
+
+            // Validação: Número do BI
+            if (string.IsNullOrWhiteSpace(modelo.NumBI))
+                throw new Exception("O número do BI é obrigatório.");
+
+            // Validação: Email do Funcionário
+            if (string.IsNullOrWhiteSpace(modelo.EmailFuncionario))
+                throw new Exception("O e-mail do funcionário é obrigatório.");
+            if (!modelo.EmailFuncionario.Contains("@") || !modelo.EmailFuncionario.Contains("."))
+                throw new Exception("O e-mail do funcionário é inválido.");
+
+            // Validação: Endereço do Funcionário
+            if (string.IsNullOrWhiteSpace(modelo.EnderecoFuncionario))
+                throw new Exception("O endereço do funcionário é obrigatório.");
+
+            // Validação: Telefone do Funcionário
+            if (string.IsNullOrWhiteSpace(modelo.TelefoneFuncionario))
+                throw new Exception("O telefone do funcionário é obrigatório.");
+            if (modelo.TelefoneFuncionario.Length < 9)
+                throw new Exception("O telefone do funcionário deve ter ao menos 9 dígitos.");
+
+            // Se todas as validações forem atendidas, chamar o método de inclusão na camada de dados
             DFuncionario Dobj = new DFuncionario(conexao);
             Dobj.Incluir(modelo);
         }

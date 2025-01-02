@@ -27,18 +27,6 @@ namespace Views
         {
             btnLocalizar_Click(sender, e);
 
-            // Verifica se há dados no DataGridView antes de configurar as colunas
-            if (dgvDados.DataSource != null && dgvDados.Rows.Count > 0)
-            {
-                dgvDados.Columns[0].HeaderText = "Código";
-                dgvDados.Columns[0].Width = 100;
-                dgvDados.Columns[1].HeaderText = "Categoria";
-                dgvDados.Columns[1].Width = 700;
-            }
-            else
-            {
-                MessageBox.Show("Sem dados para serem configurados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
 
@@ -97,10 +85,14 @@ namespace Views
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pbVoltar_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+
+            // Retornar ao FormTelaPrincipal
+            FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
+            this.Hide();
+            telaPrincipal.Show();
         }
     }
+    
 }

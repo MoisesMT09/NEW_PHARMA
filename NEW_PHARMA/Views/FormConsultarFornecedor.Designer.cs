@@ -102,6 +102,7 @@
             pbVoltar.Size = new Size(39, 35);
             pbVoltar.TabIndex = 34;
             pbVoltar.TabStop = false;
+            pbVoltar.Click += pbVoltar_Click;
             // 
             // FormConsultarFornecedor
             // 
