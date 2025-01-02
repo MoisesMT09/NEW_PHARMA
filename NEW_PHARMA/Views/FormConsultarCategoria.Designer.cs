@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultarCategoria));
             label1 = new Label();
-            txtForncedor = new TextBox();
+            txtCategoria = new TextBox();
             btnLocalizar = new Button();
             dgvDados = new DataGridView();
             label2 = new Label();
@@ -49,14 +49,14 @@
             label1.TabIndex = 0;
             label1.Text = "Categoria";
             // 
-            // txtForncedor
+            // txtCategoria
             // 
-            txtForncedor.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtForncedor.Location = new Point(12, 86);
-            txtForncedor.Name = "txtForncedor";
-            txtForncedor.Size = new Size(613, 29);
-            txtForncedor.TabIndex = 1;
-            txtForncedor.TextChanged += txtCategoria_TextChanged;
+            txtCategoria.Font = new Font("Century Schoolbook", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCategoria.Location = new Point(12, 86);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(613, 29);
+            txtCategoria.TabIndex = 1;
+            txtCategoria.TextChanged += txtCategoria_TextChanged;
             // 
             // btnLocalizar
             // 
@@ -113,7 +113,7 @@
             Controls.Add(label2);
             Controls.Add(dgvDados);
             Controls.Add(btnLocalizar);
-            Controls.Add(txtForncedor);
+            Controls.Add(txtCategoria);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormConsultarCategoria";
@@ -129,7 +129,7 @@
         #endregion
 
         private Label label1;
-        private TextBox txtForncedor;
+        private TextBox txtCategoria;
         private Button btnLocalizar;
         private DataGridView dgvDados;
         private Label label2;

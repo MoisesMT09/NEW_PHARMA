@@ -113,7 +113,6 @@ namespace Views
                 MessageBox.Show("Erro: " + ex.Message);
             }
 
-
         }
         private void btnLocalizar_Click(object sender, EventArgs e)
         {

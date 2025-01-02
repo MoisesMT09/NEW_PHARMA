@@ -36,17 +36,20 @@
             toolStripSeparator1 = new ToolStripSeparator();
             fUNCIONARIOToolStripMenuItem = new ToolStripMenuItem();
             cLIENTEToolStripMenuItem = new ToolStripMenuItem();
+            vENDAToolStripMenuItem = new ToolStripMenuItem();
             cONSULTAToolStripMenuItem = new ToolStripMenuItem();
             fORNECEDORToolStripMenuItem1 = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
-            pRODUTOToolStripMenuItem1 = new ToolStripMenuItem();
+            PrODUTOMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             fUNCIONARIOToolStripMenuItem1 = new ToolStripMenuItem();
             cLIENTEToolStripMenuItem1 = new ToolStripMenuItem();
+            vENDAToolStripMenuItem1 = new ToolStripMenuItem();
             rEGISTRARVENDASToolStripMenuItem = new ToolStripMenuItem();
+            iTENSVENDIDOSToolStripMenuItem = new ToolStripMenuItem();
             rELATORIOToolStripMenuItem = new ToolStripMenuItem();
-            sOBREToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
+            eSTOQUEToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             label2 = new Label();
             ptInicial = new PictureBox();
@@ -56,10 +59,10 @@
             // 
             // cADASTROToolStripMenuItem
             // 
-            cADASTROToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fORNECEDORToolStripMenuItem, CATEGORIAItem, pRODUTOToolStripMenuItem, toolStripSeparator1, fUNCIONARIOToolStripMenuItem, cLIENTEToolStripMenuItem });
+            cADASTROToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fORNECEDORToolStripMenuItem, CATEGORIAItem, pRODUTOToolStripMenuItem, toolStripSeparator1, fUNCIONARIOToolStripMenuItem, cLIENTEToolStripMenuItem, vENDAToolStripMenuItem });
             cADASTROToolStripMenuItem.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
             cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
-            cADASTROToolStripMenuItem.Size = new Size(138, 25);
+            cADASTROToolStripMenuItem.Size = new Size(138, 29);
             cADASTROToolStripMenuItem.Text = "CADASTRO";
             // 
             // fORNECEDORToolStripMenuItem
@@ -104,19 +107,25 @@
             cLIENTEToolStripMenuItem.Size = new Size(237, 34);
             cLIENTEToolStripMenuItem.Text = "CLIENTE";
             // 
+            // vENDAToolStripMenuItem
+            // 
+            vENDAToolStripMenuItem.Name = "vENDAToolStripMenuItem";
+            vENDAToolStripMenuItem.Size = new Size(237, 34);
+            vENDAToolStripMenuItem.Text = "VENDA";
+            // 
             // cONSULTAToolStripMenuItem
             // 
-            cONSULTAToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fORNECEDORToolStripMenuItem1, categoriaToolStripMenuItem, pRODUTOToolStripMenuItem1, toolStripSeparator2, fUNCIONARIOToolStripMenuItem1, cLIENTEToolStripMenuItem1 });
+            cONSULTAToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fORNECEDORToolStripMenuItem1, categoriaToolStripMenuItem, PrODUTOMenuItem, toolStripSeparator2, fUNCIONARIOToolStripMenuItem1, cLIENTEToolStripMenuItem1, vENDAToolStripMenuItem1 });
             cONSULTAToolStripMenuItem.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cONSULTAToolStripMenuItem.Name = "cONSULTAToolStripMenuItem";
-            cONSULTAToolStripMenuItem.Size = new Size(137, 25);
+            cONSULTAToolStripMenuItem.Size = new Size(137, 29);
             cONSULTAToolStripMenuItem.Text = "CONSULTA";
             // 
             // fORNECEDORToolStripMenuItem1
             // 
             fORNECEDORToolStripMenuItem1.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
             fORNECEDORToolStripMenuItem1.Name = "fORNECEDORToolStripMenuItem1";
-            fORNECEDORToolStripMenuItem1.Size = new Size(237, 34);
+            fORNECEDORToolStripMenuItem1.Size = new Size(270, 34);
             fORNECEDORToolStripMenuItem1.Text = "FORNECEDOR";
             fORNECEDORToolStripMenuItem1.Click += fORNECEDORToolStripMenuItem1_Click;
             // 
@@ -124,67 +133,84 @@
             // 
             categoriaToolStripMenuItem.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(237, 34);
+            categoriaToolStripMenuItem.Size = new Size(270, 34);
             categoriaToolStripMenuItem.Text = "CATEGORIA";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
-            // pRODUTOToolStripMenuItem1
+            // PrODUTOMenuItem
             // 
-            pRODUTOToolStripMenuItem1.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
-            pRODUTOToolStripMenuItem1.Name = "pRODUTOToolStripMenuItem1";
-            pRODUTOToolStripMenuItem1.Size = new Size(237, 34);
-            pRODUTOToolStripMenuItem1.Text = "PRODUTO";
+            PrODUTOMenuItem.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            PrODUTOMenuItem.Name = "PrODUTOMenuItem";
+            PrODUTOMenuItem.Size = new Size(270, 34);
+            PrODUTOMenuItem.Text = "PRODUTO";
+            PrODUTOMenuItem.Click += pRODUTOToolStripMenuItem1_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(234, 6);
+            toolStripSeparator2.Size = new Size(267, 6);
             // 
             // fUNCIONARIOToolStripMenuItem1
             // 
             fUNCIONARIOToolStripMenuItem1.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
             fUNCIONARIOToolStripMenuItem1.Name = "fUNCIONARIOToolStripMenuItem1";
-            fUNCIONARIOToolStripMenuItem1.Size = new Size(237, 34);
+            fUNCIONARIOToolStripMenuItem1.Size = new Size(270, 34);
             fUNCIONARIOToolStripMenuItem1.Text = "FUNCIONARIO";
+            fUNCIONARIOToolStripMenuItem1.Click += fUNCIONARIOToolStripMenuItem1_Click;
             // 
             // cLIENTEToolStripMenuItem1
             // 
             cLIENTEToolStripMenuItem1.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
             cLIENTEToolStripMenuItem1.Name = "cLIENTEToolStripMenuItem1";
-            cLIENTEToolStripMenuItem1.Size = new Size(237, 34);
+            cLIENTEToolStripMenuItem1.Size = new Size(270, 34);
             cLIENTEToolStripMenuItem1.Text = "CLIENTE";
+            cLIENTEToolStripMenuItem1.Click += cLIENTEToolStripMenuItem1_Click;
+            // 
+            // vENDAToolStripMenuItem1
+            // 
+            vENDAToolStripMenuItem1.Name = "vENDAToolStripMenuItem1";
+            vENDAToolStripMenuItem1.Size = new Size(270, 34);
+            vENDAToolStripMenuItem1.Text = "VENDA";
             // 
             // rEGISTRARVENDASToolStripMenuItem
             // 
+            rEGISTRARVENDASToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { iTENSVENDIDOSToolStripMenuItem });
             rEGISTRARVENDASToolStripMenuItem.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
             rEGISTRARVENDASToolStripMenuItem.Name = "rEGISTRARVENDASToolStripMenuItem";
-            rEGISTRARVENDASToolStripMenuItem.Size = new Size(236, 25);
-            rEGISTRARVENDASToolStripMenuItem.Text = "REGISTRAR VENDAS";
+            rEGISTRARVENDASToolStripMenuItem.Size = new Size(132, 29);
+            rEGISTRARVENDASToolStripMenuItem.Text = "REGISTAR";
+            rEGISTRARVENDASToolStripMenuItem.Click += rEGISTRARVENDASToolStripMenuItem_Click;
+            // 
+            // iTENSVENDIDOSToolStripMenuItem
+            // 
+            iTENSVENDIDOSToolStripMenuItem.Name = "iTENSVENDIDOSToolStripMenuItem";
+            iTENSVENDIDOSToolStripMenuItem.Size = new Size(285, 34);
+            iTENSVENDIDOSToolStripMenuItem.Text = "ITENS VENDIDOS";
             // 
             // rELATORIOToolStripMenuItem
             // 
             rELATORIOToolStripMenuItem.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
             rELATORIOToolStripMenuItem.Name = "rELATORIOToolStripMenuItem";
-            rELATORIOToolStripMenuItem.Size = new Size(148, 25);
+            rELATORIOToolStripMenuItem.Size = new Size(148, 29);
             rELATORIOToolStripMenuItem.Text = "RELATORIO";
-            // 
-            // sOBREToolStripMenuItem
-            // 
-            sOBREToolStripMenuItem.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            sOBREToolStripMenuItem.Size = new Size(96, 25);
-            sOBREToolStripMenuItem.Text = "SOBRE";
             // 
             // menuStrip1
             // 
+            menuStrip1.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, cONSULTAToolStripMenuItem, rEGISTRARVENDASToolStripMenuItem, rELATORIOToolStripMenuItem, sOBREToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, cONSULTAToolStripMenuItem, rEGISTRARVENDASToolStripMenuItem, rELATORIOToolStripMenuItem, eSTOQUEToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(800, 29);
+            menuStrip1.Size = new Size(800, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // eSTOQUEToolStripMenuItem
+            // 
+            eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
+            eSTOQUEToolStripMenuItem.Size = new Size(136, 29);
+            eSTOQUEToolStripMenuItem.Text = "ESTOQUE";
             // 
             // label1
             // 
@@ -255,16 +281,19 @@
         private ToolStripMenuItem cONSULTAToolStripMenuItem;
         private ToolStripMenuItem fORNECEDORToolStripMenuItem1;
         private ToolStripMenuItem categoriaToolStripMenuItem;
-        private ToolStripMenuItem pRODUTOToolStripMenuItem1;
+        private ToolStripMenuItem PrODUTOMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem fUNCIONARIOToolStripMenuItem1;
         private ToolStripMenuItem cLIENTEToolStripMenuItem1;
         private ToolStripMenuItem rEGISTRARVENDASToolStripMenuItem;
         private ToolStripMenuItem rELATORIOToolStripMenuItem;
-        private ToolStripMenuItem sOBREToolStripMenuItem;
         private MenuStrip menuStrip1;
         private Label label1;
         private Label label2;
         private PictureBox ptInicial;
+        private ToolStripMenuItem vENDAToolStripMenuItem;
+        private ToolStripMenuItem vENDAToolStripMenuItem1;
+        private ToolStripMenuItem iTENSVENDIDOSToolStripMenuItem;
+        private ToolStripMenuItem eSTOQUEToolStripMenuItem;
     }
 }

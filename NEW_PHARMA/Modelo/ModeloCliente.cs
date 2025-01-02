@@ -11,55 +11,30 @@ namespace Modelo
         public ModeloCliente()
         {
             this.ClienteID = 0;
-            this.Nome = "";
-            this.NBI = "";
-            this.Endereco = "";
-            this.Telefone = "";
+            this.NomeCliente = "";
+            this.NumBICliente = "";
+            this.EnderecoCliente = "";
+            this.TelefoneCliente = "";
         }
 
-        public ModeloCliente(int id, string nome, string nbi, string endereco, string telefone)
+        public ModeloCliente(int clienteID, string nomeCliente, string numBICliente, string enderecoCliente, string telefoneCliente)
         {
-            this.ClienteID = id;
-            this.Nome = nome;
-            this.NBI = nbi;
-            this.Endereco = endereco;
-            this.Telefone = telefone;
+            this.ClienteID = clienteID;
+            this.NomeCliente = nomeCliente;
+            this.NumBICliente = numBICliente;
+            this.EnderecoCliente = enderecoCliente;
+            this.TelefoneCliente = telefoneCliente;
         }
 
-        private int clienteID;
-        public int ClienteID
-        {
-            get { return clienteID; }
-            set { clienteID = value; }
-        }
-
-        private string nome;
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
-
-        private string nbi;
-        public string NBI
-        {
-            get { return nbi; }
-            set { nbi = value; }
-        }
-
-        private string endereco;
-        public string Endereco
-        {
-            get { return endereco; }
-            set { endereco = value; }
-        }
-
-        private string telefone;
-        public string Telefone
-        {
-            get { return telefone; }
-            set { telefone = value; }
-        }
+        public int ClienteID { get; set; }
+        public string NomeCliente { get; set; }
+        public string NumBICliente { get; set; }
+        public string EnderecoCliente { get; set; }
+        public string TelefoneCliente { get; set; }
     }
 }
+
+
+
+
 

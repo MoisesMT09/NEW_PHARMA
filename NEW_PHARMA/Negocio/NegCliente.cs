@@ -9,68 +9,70 @@ using System.Data;
 using Modelo;
 using Dados;
 
+using System;
+using System.Data;
+using Dados;
+using Modelo;
+
 namespace Negocio
 {
     public class NegCliente
     {
-        private DadosConexao conexao;
+        private readonly DadosConexao conexao;
 
-        public NegCliente(DadosConexao cox)
+        public NegCliente(DadosConexao conexao)
         {
-            this.conexao = cox;
+            this.conexao = conexao;
         }
 
         public void Incluir(ModeloCliente modelo)
         {
-            if (string.IsNullOrWhiteSpace(modelo.Nome))
+            if (string.IsNullOrWhiteSpace(modelo.NomeCliente))
                 throw new Exception("O nome do cliente é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.NBI))
+            if (string.IsNullOrWhiteSpace(modelo.NumBICliente))
                 throw new Exception("O número do BI é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.Endereco))
-                throw new Exception("O endereço é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.Telefone))
-                throw new Exception("O telefone é obrigatório.");
+            if (string.IsNullOrWhiteSpace(modelo.EnderecoCliente))
+                throw new Exception("O endereço do cliente é obrigatório.");
+            if (string.IsNullOrWhiteSpace(modelo.TelefoneCliente))
+                throw new Exception("O telefone do cliente é obrigatório.");
 
-            DCliente Dobj = new DCliente(conexao);
-            Dobj.Incluir(modelo);
+            DCliente dCliente = new DCliente(conexao);
+            dCliente.Incluir(modelo);
         }
 
         public void Alterar(ModeloCliente modelo)
         {
             if (modelo.ClienteID <= 0)
                 throw new Exception("O código do cliente é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.Nome))
+            if (string.IsNullOrWhiteSpace(modelo.NomeCliente))
                 throw new Exception("O nome do cliente é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.NBI))
+            if (string.IsNullOrWhiteSpace(modelo.NumBICliente))
                 throw new Exception("O número do BI é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.Endereco))
-                throw new Exception("O endereço é obrigatório.");
-            if (string.IsNullOrWhiteSpace(modelo.Telefone))
-                throw new Exception("O telefone é obrigatório.");
+            if (string.IsNullOrWhiteSpace(modelo.EnderecoCliente))
+                throw new Exception("O endereço do cliente é obrigatório.");
+            if (string.IsNullOrWhiteSpace(modelo.TelefoneCliente))
+                throw new Exception("O telefone do cliente é obrigatório.");
 
-            DCliente Dobj = new DCliente(conexao);
-            Dobj.Alterar(modelo);
+            DCliente dCliente = new DCliente(conexao);
+            dCliente.Alterar(modelo);
         }
 
         public void Excluir(int id)
         {
-            if (id <= 0)
-                throw new Exception("O código do cliente é obrigatório.");
-
-            DCliente Dobj = new DCliente(conexao);
-            Dobj.Excluir(id);
+            DCliente dCliente = new DCliente(conexao);
+            dCliente.Excluir(id);
         }
 
         public DataTable Localizar(string valor)
         {
-            DCliente Dobj = new DCliente(conexao);
-            return Dobj.Localizar(valor);
+            DCliente dCliente = new DCliente(conexao);
+            return dCliente.Localizar(valor);
         }
 
-        public ModeloCliente CarregaModeloCliente(int id)
+        public ModeloCliente CarregarModeloCliente(int id)
         {
-            DCliente Dobj = new DCliente(conexao);
-            return Dobj.CarregaModeloCliente(id);
+            DCliente dCliente = new DCliente(conexao);
+            return dCliente.CarregarModeloCliente(id);
         }
     }
 }

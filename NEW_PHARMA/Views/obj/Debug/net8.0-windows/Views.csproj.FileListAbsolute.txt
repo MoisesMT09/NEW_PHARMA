@@ -87,3 +87,5 @@ C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Vie
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormConsultarFuncionario.resources
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormConsultarProduto.resources
 C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormCadastroDeFuncionario.resources
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormCadastroDeCliente.resources
+C:\Users\moise\Downloads\NEW_PHARMA\SISTEMA_NEW_PHARMA\NEW_PHARMA\NEW_PHARMA\Views\obj\Debug\net8.0-windows\Views.FormConsultarCliente.resources

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Dados;
 using Negocio;
 using Modelo;
+using Views;
 
 namespace Views
 {
@@ -34,35 +35,36 @@ namespace Views
         {
             try
             {
-                DadosConexao cox = new DadosConexao(DConexao.StringConexao);
-                NegCategoria negCateg = new NegCategoria(cox);
+                DadosConexao conexao = new DadosConexao(DConexao.StringConexao);
+                NegCategoria negCategoria = new NegCategoria(conexao);
 
                 // Buscar os dados com base no texto informado
-                var resultado = negCateg.Localizar(txtForncedor.Text);
+                var resultado = negCategoria.Localizar(txtCategoria.Text.Trim());
 
-                // Verificar se existem dados no resultado
-                if (resultado == null || resultado.Rows.Count == 0)
+                // Configurar DataGridView apenas se houver resultados
+                if (resultado != null && resultado.Rows.Count > 0)
                 {
-                    MessageBox.Show("Nenhuma categoria encontrada.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                    dgvDados.DataSource = resultado;
 
-                // Exibir os dados no DataGridView
-                dgvDados.DataSource = resultado;
-
-                // Configurar as colunas após a carga dos dados
-                if (dgvDados.Rows.Count >= 0)
-                {
+                    // Configurar cabeçalhos das colunas
                     dgvDados.Columns[0].HeaderText = "Código";
-                    dgvDados.Columns[0].Width = 100;
+                    dgvDados.Columns[0].Width = 80;
                     dgvDados.Columns[1].HeaderText = "Categoria";
-                    dgvDados.Columns[1].Width = 700;
+                    dgvDados.Columns[1].Width = 350;
+
+                    // Exibir mensagem de sucesso
+                    MessageBox.Show("Resultados encontrados.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Limpar DataGridView se não houver resultados
+                    dgvDados.DataSource = null;
+                    MessageBox.Show("Nenhuma categoria encontrada.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                // Tratamento de erro
-                MessageBox.Show($"Erro ao localizar dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao localizar categorias: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,10 +74,10 @@ namespace Views
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)  // Corrigido para verificar que a linha selecionada é válida
+            if (e.RowIndex >= 0) // Verifica se uma linha válida foi clicada
             {
                 this.Codigo = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
-                this.Close();
+                MessageBox.Show($"Categoria selecionada: {dgvDados.Rows[e.RowIndex].Cells[1].Value}", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -88,11 +90,12 @@ namespace Views
         private void pbVoltar_Click(object sender, EventArgs e)
         {
 
-            // Retornar ao FormTelaPrincipal
+            this.Codigo = 0; // Resetar código ao voltar
             FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
             this.Hide();
             telaPrincipal.Show();
         }
     }
-    
+
 }
+

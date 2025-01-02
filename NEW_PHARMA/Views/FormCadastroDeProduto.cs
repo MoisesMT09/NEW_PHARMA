@@ -80,55 +80,8 @@ namespace Views
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Criação do modelo e preenchimento dos dados
-                ModeloProduto modelo = new ModeloProduto
-                {
-                    NomeProduto = txtNome.Text,
-                    DescProduto = txtDescricao.Text,
-                    QuantEstProduto = int.Parse(txtQuantidade.Text),
-                    PrecoProduto = decimal.Parse(txtPreco.Text),
-                    CategID = int.Parse(cmbCategoria.SelectedValue.ToString()),
-                    FornecID = int.Parse(cmbFornecedor.SelectedValue.ToString())
-                };
-
-                // Instanciação da conexão e negócio
-                DadosConexao cox = new DadosConexao(DConexao.StringConexao);
-                NegProduto negProduto = new NegProduto(cox);
-
-                if (this.Operacao == "INSERIR")
-                {
-                    // Inclusão do produto
-                    negProduto.InserirProduto(modelo);
-                    MessageBox.Show("Produto cadastrado com sucesso! ID: " + modelo.ProdutoID.ToString());
-
-                    // Preenchendo os campos com os dados inseridos
-                    txtID.Text = modelo.ProdutoID.ToString();
-                    txtNome.Text = modelo.NomeProduto;
-                    txtDescricao.Text = modelo.DescProduto;
-                    txtQuantidade.Text = modelo.QuantEstProduto.ToString();
-                    txtPreco.Text = modelo.PrecoProduto.ToString();
-                    cmbCategoria.SelectedValue = modelo.CategID;
-                    cmbFornecedor.SelectedValue = modelo.FornecID;
-
-                    AlterarBotoes(1); // Define estado para edição
-                }
-                else
-                {
-                    // Alteração de produto
-                    modelo.ProdutoID = int.Parse(txtID.Text);
-                    negProduto.Alterar(modelo);
-                    MessageBox.Show("Produto alterado com sucesso!");
-                }
-
-                this.LimpaTela();
-                this.AlterarBotoes(1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao salvar o produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            this.Operacao = "INSERIR";
+            this.AlterarBotoes(2);
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -221,7 +174,44 @@ namespace Views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Criação do modelo a partir dos dados da tela
+                ModeloProduto modelo = new ModeloProduto
+                {
+                    NomeProduto = txtNome.Text,
+                    DescProduto = txtDescricao.Text.Trim(),
+                    PrecoProduto = Convert.ToDecimal(txtPreco.Text),
+                    QuantEstProduto = Convert.ToInt32(txtQuantidade.Text),
+                    CategID = Convert.ToInt32(cmbCategoria.SelectedValue),
+                    FornecID = Convert.ToInt32(cmbFornecedor.SelectedValue),
+                };
 
+                DadosConexao cox = new DadosConexao(DConexao.StringConexao);
+                NegProduto negProduto = new NegProduto(cox);
+
+                if (this.Operacao == "INSERIR")
+                {
+                    negProduto.InserirProduto(modelo);
+                    MessageBox.Show("Produto inserido com sucesso. ID: " + modelo.ProdutoID.ToString());
+
+                    txtID.Text = modelo.ProdutoID.ToString();
+                }
+                else if (this.Operacao == "ALTERAR")
+                {
+                    modelo.ProdutoID = Convert.ToInt32(txtID.Text);
+                    negProduto.Alterar(modelo);
+                    MessageBox.Show("Produto atualizado com sucesso.");
+                }
+
+                this.LimpaTela();
+                this.AlterarBotoes(1);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            };
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

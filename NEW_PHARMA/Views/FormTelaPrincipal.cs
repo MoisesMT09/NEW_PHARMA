@@ -54,7 +54,6 @@ namespace Views
 
         private void fORNECEDORToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,5 +82,40 @@ namespace Views
             // this.Close();
         }
 
+        private void rEGISTRARVENDASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sOBREToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pRODUTOToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormConsultarProduto consultarProduto = new FormConsultarProduto())
+            {
+
+                consultarProduto.ShowDialog();
+            }
+        }
+
+        private void fUNCIONARIOToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormConsultarFuncionario consultarFuncionario = new FormConsultarFuncionario())
+            {
+
+                consultarFuncionario.ShowDialog();
+            }
+        }
+
+        private void cLIENTEToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormConsultarCliente ConsultarCliente = new FormConsultarCliente())
+            {
+                ConsultarCliente.ShowDialog();
+            }
+        }
     }
 }
