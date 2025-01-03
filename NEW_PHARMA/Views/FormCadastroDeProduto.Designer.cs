@@ -53,16 +53,20 @@
             label3 = new Label();
             label7 = new Label();
             pbVoltar = new PictureBox();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             pnBotao.SuspendLayout();
             pnDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Schoolbook", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(229, 28);
+            label1.Location = new Point(229, 18);
             label1.Name = "label1";
             label1.Size = new Size(292, 25);
             label1.TabIndex = 0;
@@ -132,15 +136,15 @@
             pnBotao.Controls.Add(btnAlterar);
             pnBotao.Controls.Add(btnLocalizar);
             pnBotao.Controls.Add(btnInserir);
-            pnBotao.Location = new Point(12, 468);
+            pnBotao.Location = new Point(12, 482);
             pnBotao.Name = "pnBotao";
-            pnBotao.Size = new Size(776, 120);
+            pnBotao.Size = new Size(776, 106);
             pnBotao.TabIndex = 25;
             // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            btnCancelar.Location = new Point(685, 17);
+            btnCancelar.Location = new Point(673, 19);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 82);
             btnCancelar.TabIndex = 10;
@@ -150,34 +154,35 @@
             // 
             // txtNome
             // 
-            txtNome.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(17, 131);
+            txtNome.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNome.Location = new Point(17, 105);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(328, 29);
+            txtNome.Size = new Size(479, 27);
             txtNome.TabIndex = 29;
             // 
             // txtID
             // 
             txtID.Enabled = false;
-            txtID.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtID.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtID.Location = new Point(17, 51);
             txtID.Name = "txtID";
-            txtID.Size = new Size(150, 29);
+            txtID.Size = new Size(126, 27);
             txtID.TabIndex = 22;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(32, 27);
             label2.Name = "label2";
-            label2.Size = new Size(33, 21);
+            label2.Size = new Size(29, 19);
             label2.TabIndex = 21;
             label2.Text = "ID";
             // 
             // pnDados
             // 
             pnDados.BorderStyle = BorderStyle.FixedSingle;
+            pnDados.Controls.Add(panel1);
             pnDados.Controls.Add(cmbFornecedor);
             pnDados.Controls.Add(cmbCategoria);
             pnDados.Controls.Add(label8);
@@ -192,50 +197,52 @@
             pnDados.Controls.Add(label7);
             pnDados.Controls.Add(txtID);
             pnDados.Controls.Add(label2);
-            pnDados.Location = new Point(11, 71);
+            pnDados.Location = new Point(11, 49);
             pnDados.Name = "pnDados";
-            pnDados.Size = new Size(777, 377);
+            pnDados.Size = new Size(777, 419);
             pnDados.TabIndex = 26;
             // 
             // cmbFornecedor
             // 
+            cmbFornecedor.Font = new Font("Century Schoolbook", 8F);
             cmbFornecedor.FormattingEnabled = true;
-            cmbFornecedor.Location = new Point(577, 54);
+            cmbFornecedor.Location = new Point(280, 370);
             cmbFornecedor.Name = "cmbFornecedor";
-            cmbFornecedor.Size = new Size(146, 30);
+            cmbFornecedor.Size = new Size(229, 28);
             cmbFornecedor.TabIndex = 35;
             // 
             // cmbCategoria
             // 
+            cmbCategoria.Font = new Font("Century Schoolbook", 8F);
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(366, 54);
+            cmbCategoria.Location = new Point(18, 370);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(158, 30);
+            cmbCategoria.Size = new Size(231, 28);
             cmbCategoria.TabIndex = 34;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            label8.Location = new Point(577, 27);
+            label8.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            label8.Location = new Point(305, 348);
             label8.Name = "label8";
-            label8.Size = new Size(140, 21);
+            label8.Size = new Size(106, 19);
             label8.TabIndex = 33;
-            label8.Text = "FornecedorID";
+            label8.Text = "Fornecedor";
             // 
             // txtPreco
             // 
             txtPreco.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPreco.Location = new Point(366, 293);
+            txtPreco.Location = new Point(280, 316);
             txtPreco.Name = "txtPreco";
-            txtPreco.Size = new Size(215, 29);
+            txtPreco.Size = new Size(229, 29);
             txtPreco.TabIndex = 32;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            label5.Location = new Point(384, 269);
+            label5.Location = new Point(305, 292);
             label5.Name = "label5";
             label5.Size = new Size(149, 21);
             label5.TabIndex = 6;
@@ -244,46 +251,47 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            label6.Location = new Point(384, 27);
+            label6.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            label6.Location = new Point(32, 348);
             label6.Name = "label6";
-            label6.Size = new Size(125, 21);
+            label6.Size = new Size(91, 19);
             label6.TabIndex = 7;
-            label6.Text = "CategoriaID";
+            label6.Text = "Categoria";
             // 
             // txtDescricao
             // 
-            txtDescricao.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            txtDescricao.Location = new Point(17, 210);
+            txtDescricao.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            txtDescricao.Location = new Point(17, 157);
+            txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(328, 29);
+            txtDescricao.Size = new Size(492, 132);
             txtDescricao.TabIndex = 28;
             // 
             // txtQuantidade
             // 
-            txtQuantidade.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            txtQuantidade.Location = new Point(17, 293);
+            txtQuantidade.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            txtQuantidade.Location = new Point(17, 318);
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(328, 29);
+            txtQuantidade.Size = new Size(232, 27);
             txtQuantidade.TabIndex = 27;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            label4.Location = new Point(32, 269);
+            label4.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            label4.Location = new Point(32, 296);
             label4.Name = "label4";
-            label4.Size = new Size(120, 21);
+            label4.Size = new Size(108, 19);
             label4.TabIndex = 26;
             label4.Text = "Quantidade";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold);
-            label3.Location = new Point(32, 185);
+            label3.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold);
+            label3.Location = new Point(32, 135);
             label3.Name = "label3";
-            label3.Size = new Size(102, 21);
+            label3.Size = new Size(91, 19);
             label3.TabIndex = 25;
             label3.Text = "Descrição";
             // 
@@ -291,21 +299,39 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(32, 107);
+            label7.Location = new Point(32, 81);
             label7.Name = "label7";
-            label7.Size = new Size(72, 21);
+            label7.Size = new Size(63, 21);
             label7.TabIndex = 24;
-            label7.Text = "NOME";
+            label7.Text = "Nome";
             // 
             // pbVoltar
             // 
             pbVoltar.Image = (Image)resources.GetObject("pbVoltar.Image");
-            pbVoltar.Location = new Point(12, 18);
+            pbVoltar.Location = new Point(12, 8);
             pbVoltar.Name = "pbVoltar";
             pbVoltar.Size = new Size(39, 35);
             pbVoltar.TabIndex = 34;
             pbVoltar.TabStop = false;
             pbVoltar.Click += pbVoltar_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(552, 51);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(204, 173);
+            panel1.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(204, 173);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // FormCadastroDeProduto
             // 
@@ -326,6 +352,8 @@
             pnDados.ResumeLayout(false);
             pnDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -356,5 +384,7 @@
         private ComboBox cmbFornecedor;
         private ComboBox cmbCategoria;
         private PictureBox pbVoltar;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
