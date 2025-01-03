@@ -57,11 +57,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(71, 251);
+            label2.Location = new Point(83, 251);
             label2.Name = "label2";
-            label2.Size = new Size(215, 22);
+            label2.Size = new Size(207, 22);
             label2.TabIndex = 1;
-            label2.Text = "QUEREMOS - TE BEM";
+            label2.Text = "WE WISH YOU WELL";
             label2.Click += label2_Click;
             // 
             // btnEntrar

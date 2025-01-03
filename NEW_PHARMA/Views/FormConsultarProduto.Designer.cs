@@ -53,6 +53,7 @@
             // 
             dgvDados.AllowUserToAddRows = false;
             dgvDados.AllowUserToDeleteRows = false;
+            dgvDados.BackgroundColor = Color.Cyan;
             dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDados.Location = new Point(23, 139);
             dgvDados.Name = "dgvDados";
@@ -107,6 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(800, 600);
             Controls.Add(pbVoltar);
             Controls.Add(dgvDados);

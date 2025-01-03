@@ -226,6 +226,7 @@ namespace Views
             FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
             this.Hide();
             telaPrincipal.Show();
+            this.Close();
         }
     }
 }

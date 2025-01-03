@@ -41,6 +41,8 @@
             txtID = new TextBox();
             label2 = new Label();
             pnDados = new Panel();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             cmbFornecedor = new ComboBox();
             cmbCategoria = new ComboBox();
             label8 = new Label();
@@ -53,13 +55,11 @@
             label3 = new Label();
             label7 = new Label();
             pbVoltar = new PictureBox();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             pnBotao.SuspendLayout();
             pnDados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -157,7 +157,7 @@
             txtNome.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNome.Location = new Point(17, 105);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(479, 27);
+            txtNome.Size = new Size(492, 27);
             txtNome.TabIndex = 29;
             // 
             // txtID
@@ -201,6 +201,24 @@
             pnDados.Name = "pnDados";
             pnDados.Size = new Size(777, 419);
             pnDados.TabIndex = 26;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(552, 105);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(204, 173);
+            panel1.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(204, 173);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // cmbFornecedor
             // 
@@ -315,28 +333,11 @@
             pbVoltar.TabStop = false;
             pbVoltar.Click += pbVoltar_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(552, 51);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(204, 173);
-            panel1.TabIndex = 36;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(204, 173);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // FormCadastroDeProduto
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Cyan;
             ClientSize = new Size(800, 600);
             Controls.Add(pbVoltar);
             Controls.Add(pnDados);
@@ -351,9 +352,9 @@
             pnBotao.ResumeLayout(false);
             pnDados.ResumeLayout(false);
             pnDados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

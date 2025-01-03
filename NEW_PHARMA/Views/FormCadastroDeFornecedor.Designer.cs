@@ -299,11 +299,13 @@
             pbVoltar.Size = new Size(39, 35);
             pbVoltar.TabIndex = 35;
             pbVoltar.TabStop = false;
+            pbVoltar.Click += pbVoltar_Click;
             // 
             // FormCadastroDeFornecedor
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Cyan;
             ClientSize = new Size(800, 600);
             Controls.Add(pbVoltar);
             Controls.Add(pnDados);

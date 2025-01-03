@@ -169,6 +169,7 @@
             // 
             // txtID
             // 
+            txtID.BackColor = SystemColors.Window;
             txtID.Enabled = false;
             txtID.Location = new Point(46, 104);
             txtID.Name = "txtID";
@@ -199,6 +200,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Cyan;
             ClientSize = new Size(800, 600);
             Controls.Add(pbVoltar);
             Controls.Add(label3);

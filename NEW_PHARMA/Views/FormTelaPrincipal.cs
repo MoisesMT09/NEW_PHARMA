@@ -117,5 +117,29 @@ namespace Views
                 ConsultarCliente.ShowDialog();
             }
         }
+
+        private void pRODUTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeProduto cadastroDeProduto = new FormCadastroDeProduto())
+            {
+                cadastroDeProduto.ShowDialog();
+            }
+        }
+
+        private void fUNCIONARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeFuncionario cadastroDeFuncionario = new FormCadastroDeFuncionario())
+            {
+                cadastroDeFuncionario.ShowDialog();
+            }
+        }
+
+        private void cLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeCliente cadastroDeCliente = new FormCadastroDeCliente())
+            {
+                cadastroDeCliente.ShowDialog();
+            }
+        }
     }
 }

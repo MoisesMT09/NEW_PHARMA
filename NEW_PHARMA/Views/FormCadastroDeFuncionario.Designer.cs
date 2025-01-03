@@ -300,6 +300,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Cyan;
             ClientSize = new Size(800, 600);
             Controls.Add(pbVoltar);
             Controls.Add(pnBotao);

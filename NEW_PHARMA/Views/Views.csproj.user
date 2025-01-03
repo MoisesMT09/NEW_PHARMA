@@ -31,9 +31,6 @@
     <Compile Update="FormConsultarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormModeloDeCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FormTelaDeApresentacao.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -299,6 +299,20 @@ namespace Views
             }
         }
 
+        private void pbVoltar_Click(object sender, EventArgs e)
+        {
+            // Ocultar o formulário atual
+            this.Hide();
+
+            // Instanciar o formulário de apresentação (se necessário)
+            FormTelaDeApresentacao telaApresentacao = new FormTelaDeApresentacao();
+
+            // Exibir o formulário de apresentação
+            telaApresentacao.Show();
+
+            // Opcional: Fechar o formulário atual ao voltar à tela inicial
+            this.Close();
+        }
     }
 
 }
