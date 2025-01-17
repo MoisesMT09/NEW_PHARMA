@@ -7,7 +7,7 @@ namespace Dados
 {
     public class DCliente
     {
-        private DadosConexao conexao;
+        private readonly DadosConexao conexao;
 
         public DCliente(DadosConexao cox)
         {
@@ -21,16 +21,16 @@ namespace Dados
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "INSERT INTO tbCliente (Nome, N_BI, Endereco, Telefone) " +
-                                      "VALUES (@Nome, @NBI, @Endereco, @Telefone); SELECT SCOPE_IDENTITY();";
+                    cmd.CommandText = "INSERT INTO tbCliente (Nome, Endereco, Telefone) " +
+                                      "VALUES (@Nome, @Endereco, @Telefone); SELECT SCOPE_IDENTITY();";
 
-                    cmd.Parameters.AddWithValue("@Nome", modelo.NomeCliente);
-                    cmd.Parameters.AddWithValue("@NBI", modelo.NumBICliente);
-                    cmd.Parameters.AddWithValue("@Endereco", modelo.EnderecoCliente);
-                    cmd.Parameters.AddWithValue("@Telefone", modelo.TelefoneCliente);
+                    cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = modelo.NomeCliente;
+                    cmd.Parameters.Add("@Endereco", SqlDbType.NVarChar).Value = modelo.EnderecoCliente;
+                    cmd.Parameters.Add("@Telefone", SqlDbType.NVarChar).Value = modelo.TelefoneCliente;
 
                     conexao.AbrirConexao();
-                    modelo.ClienteID = Convert.ToInt32(cmd.ExecuteScalar());
+                    int idGerado = Convert.ToInt32(cmd.ExecuteScalar());
+                    modelo.DefinirID(idGerado); // Define o ID gerado no modelo.
                 }
             }
             finally
@@ -41,22 +41,29 @@ namespace Dados
 
         public void Alterar(ModeloCliente modelo)
         {
+            if (modelo.ID <= 0)
+            {
+                throw new ArgumentException("O ID deve ser maior que zero para alterar um cliente.");
+            }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
-                { 
+                {
                     cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "UPDATE tbCliente SET Nome = @Nome, N_BI = @NBI, Endereco = @Endereco, Telefone = @Telefone " +
+                    cmd.CommandText = "UPDATE tbCliente SET Nome = @Nome, Endereco = @Endereco, Telefone = @Telefone " +
                                       "WHERE ID = @ID";
 
-                    cmd.Parameters.AddWithValue("@Nome", modelo.NomeCliente);
-                    cmd.Parameters.AddWithValue("@NBI", modelo.NumBICliente);
-                    cmd.Parameters.AddWithValue("@Endereco", modelo.EnderecoCliente);
-                    cmd.Parameters.AddWithValue("@Telefone", modelo.TelefoneCliente);
-                    cmd.Parameters.AddWithValue("@ID", modelo.ClienteID);
+                    cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = modelo.NomeCliente;
+                    cmd.Parameters.Add("@Endereco", SqlDbType.NVarChar).Value = modelo.EnderecoCliente;
+                    cmd.Parameters.Add("@Telefone", SqlDbType.NVarChar).Value = modelo.TelefoneCliente;
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = modelo.ID;
 
                     conexao.AbrirConexao();
-                    cmd.ExecuteNonQuery();
+                    if (cmd.ExecuteNonQuery() == 0)
+                    {
+                        throw new Exception("Nenhum cliente encontrado para o ID fornecido.");
+                    }
                 }
             }
             finally
@@ -67,16 +74,25 @@ namespace Dados
 
         public void Excluir(int id)
         {
+            if (id <= 0)
+            {
+                throw new ArgumentException("O ID deve ser maior que zero para excluir um cliente.");
+            }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexao.ObjectoConexao;
                     cmd.CommandText = "DELETE FROM tbCliente WHERE ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
+
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
                     conexao.AbrirConexao();
-                    cmd.ExecuteNonQuery();
+                    if (cmd.ExecuteNonQuery() == 0)
+                    {
+                        throw new Exception("Nenhum cliente encontrado para o ID fornecido.");
+                    }
                 }
             }
             finally
@@ -88,54 +104,64 @@ namespace Dados
         public DataTable Localizar(string valor)
         {
             DataTable tabela = new DataTable();
+            string query = string.IsNullOrEmpty(valor)
+                ? "SELECT * FROM tbCliente"
+                : "SELECT * FROM tbCliente WHERE Nome LIKE @Valor";
+
             try
             {
-                using (SqlDataAdapter da = new SqlDataAdapter())
+                using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
                 {
-                    da.SelectCommand = new SqlCommand
+                    if (!string.IsNullOrEmpty(valor))
                     {
-                        Connection = conexao.ObjectoConexao,
-                        CommandText = "SELECT ID, Nome, N_BI, Endereco, Telefone " +
-                                      "FROM tbCliente WHERE Nome LIKE @Valor OR N_BI LIKE @Valor"
-                    };
-                    da.SelectCommand.Parameters.AddWithValue("@Valor", "%" + valor + "%");
+                        da.SelectCommand.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = $"%{valor}%";
+                    }
 
                     da.Fill(tabela);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Erro ao buscar clientes.");
+                Console.WriteLine($"Erro ao localizar cliente: {ex.Message}");
             }
+
             return tabela;
         }
 
         public ModeloCliente CarregarModeloCliente(int id)
         {
+            if (id <= 0)
+            {
+                throw new ArgumentException("O ID deve ser maior que zero para carregar um cliente.");
+            }
+
             ModeloCliente modelo = null;
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand())
+                string query = "SELECT * FROM tbCliente WHERE ID = @ID";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexao.ObjectoConexao))
                 {
-                    cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "SELECT ID, Nome, N_BI, Endereco, Telefone FROM tbCliente WHERE ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
                     conexao.AbrirConexao();
+
                     using (SqlDataReader registro = cmd.ExecuteReader())
                     {
-                        if (registro.HasRows)
+                        if (registro.Read())
                         {
-                            registro.Read();
                             modelo = new ModeloCliente
                             {
-                                ClienteID = Convert.ToInt32(registro["ID"]),
+                                //ID = Convert.ToInt32(registro["ID"]),
                                 NomeCliente = registro["Nome"].ToString(),
-                                NumBICliente = registro["N_BI"].ToString(),
                                 EnderecoCliente = registro["Endereco"].ToString(),
                                 TelefoneCliente = registro["Telefone"].ToString()
                             };
+                        }
+                        else
+                        {
+                            throw new Exception("Cliente não encontrado.");
                         }
                     }
                 }
@@ -144,7 +170,48 @@ namespace Dados
             {
                 conexao.FecharConexao();
             }
+
             return modelo;
         }
+
+        public DataTable CarregarClientes()
+        {
+            DataTable tabela = new DataTable();
+            string query = "SELECT * FROM tbCliente";
+
+            try
+            {
+                using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
+                {
+                    da.Fill(tabela);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao carregar clientes: {ex.Message}");
+            }
+
+            return tabela;
+        }
+
+        public int ObterUltimoID()
+        {
+            try
+            {
+                string query = "SELECT MAX(ID) AS UltimoID FROM tbCliente";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexao.ObjectoConexao))
+                {
+                    conexao.AbrirConexao();
+                    object resultado = cmd.ExecuteScalar();
+                    return resultado != DBNull.Value ? Convert.ToInt32(resultado) : 0;
+                }
+            }
+            finally
+            {
+                conexao.FecharConexao();
+            }
+        }
+
     }
 }

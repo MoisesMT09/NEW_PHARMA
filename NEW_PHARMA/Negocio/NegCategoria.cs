@@ -45,6 +45,7 @@ namespace Negocio
             DCategoria Dobj = new DCategoria(conexao);
             Dobj.Excluir(Codigo);
         }
+
         public DataTable Localizar(String valor)
         {
             DCategoria Dobj = new DCategoria(conexao);
@@ -55,5 +56,13 @@ namespace Negocio
             DCategoria Dobj = new DCategoria(conexao);
             return Dobj.CarregaModeloCategoria(Codigo);
         }
+
+        public DataTable CarregarDados()
+        {
+            DCategoria dCategoria = new DCategoria(new DadosConexao(DConexao.StringConexao));
+            return dCategoria.CarregarDados();
+        }
+
+
     }
 }

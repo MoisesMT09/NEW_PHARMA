@@ -9,31 +9,33 @@ public class ModeloProduto
 {
     public ModeloProduto()
     {
-        ProdutoID = 0;
-        CategID = 0;
         NomeProduto = string.Empty;
         DescProduto = string.Empty;
         QuantEstProduto = 0;
         PrecoProduto = 0m;
+        CategID = 0;
         FornecID = 0;
     }
 
-    public ModeloProduto(int produtoID, int categID, string nomeProduto, string descProduto, int quantEstProduto, decimal precoProduto, int fornecID)
+    public ModeloProduto(int produtoID,string nomeProduto, string descProduto, int quantEstProduto, decimal precoProduto, DateTime dataValida, int categID, int fornecID)
     {
-        ProdutoID = produtoID;
-        CategID = categID;
+        ID = produtoID;
         NomeProduto = nomeProduto;
         DescProduto = descProduto;
         QuantEstProduto = quantEstProduto;
         PrecoProduto = precoProduto;
+        DataValida = dataValida;
+        CategID = categID;
         FornecID = fornecID;
     }
 
-    public int ProdutoID { get; set; }
-    public int CategID { get; set; }
+    public int ID { get; set; }
     public string NomeProduto { get; set; }
     public string DescProduto { get; set; }
     public int QuantEstProduto { get; set; }
     public decimal PrecoProduto { get; set; }
+    public DateTime? DataValida { get; set; } = new DateTime(2025, 1, 1);
+    public int CategID { get; set; }
     public int FornecID { get; set; }
+
 }

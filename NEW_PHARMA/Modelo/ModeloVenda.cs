@@ -21,9 +21,9 @@ namespace Modelo
             this.FuncionarioID = 0;
         }
 
-        public ModeloVenda(int id, DateTime data, int clienteId, int produtoId, int quantidade, decimal valorTotal, int funcionarioId)
+        public ModeloVenda(int ID, DateTime data, int clienteId, int produtoId, int quantidade, decimal valorTotal, int funcionarioId)
         {
-            this.VendaID = id;
+            this.VendaID = ID;
             this.DataVenda = data;
             this.ClienteID = clienteId;
             this.ProdutoID = produtoId;
@@ -32,11 +32,11 @@ namespace Modelo
             this.FuncionarioID = funcionarioId;
         }
 
-        private int id;
+        private int ID = 1;
         public int VendaID
         {
-            get { return id; }
-            set { id = value; }
+            get { return ID; }
+            set { ID = value; }
         }
 
         private DateTime dataVenda;

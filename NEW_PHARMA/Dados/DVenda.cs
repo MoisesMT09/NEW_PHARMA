@@ -34,7 +34,6 @@ namespace Dados
                     cmd.Parameters.AddWithValue("@ProdutoID", modelo.ProdutoID);
                     cmd.Parameters.AddWithValue("@Quantidade", modelo.Quantidade);
                     cmd.Parameters.AddWithValue("@ValorTotal", modelo.ValorTotal);
-                    cmd.Parameters.AddWithValue("@FuncionarioID", modelo.FuncionarioID);
 
                     conexao.AbrirConexao();
                     modelo.VendaID = Convert.ToInt32(cmd.ExecuteScalar());
@@ -60,7 +59,6 @@ namespace Dados
                 cmd.Parameters.AddWithValue("@ProdutoID", modelo.ProdutoID);
                 cmd.Parameters.AddWithValue("@Quantidade", modelo.Quantidade);
                 cmd.Parameters.AddWithValue("@ValorTotal", modelo.ValorTotal);
-                cmd.Parameters.AddWithValue("@FuncionarioID", modelo.FuncionarioID);
                 cmd.Parameters.AddWithValue("@ID", modelo.VendaID);
 
                 conexao.AbrirConexao();
@@ -69,13 +67,13 @@ namespace Dados
             conexao.FecharConexao();
         }
 
-        public void Excluir(int id)
+        public void Excluir(int ID)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conexao.ObjectoConexao;
                 cmd.CommandText = "DELETE FROM tbVenda WHERE ID = @ID";
-                cmd.Parameters.AddWithValue("@ID", id);
+                cmd.Parameters.AddWithValue("@ID", ID);
 
                 conexao.AbrirConexao();
                 cmd.ExecuteNonQuery();
@@ -93,15 +91,15 @@ namespace Dados
             return tabela;
         }
 
-        public ModeloVenda CarregaModeloVenda(int id)
+        public ModeloVenda CarregaModeloVenda(int ID)
         {
-            ModeloVenda modelo = null;
+            ModeloVenda? modelo = null;
 
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conexao.ObjectoConexao;
                 cmd.CommandText = "SELECT * FROM tbVenda WHERE ID = @ID";
-                cmd.Parameters.AddWithValue("@ID", id);
+                cmd.Parameters.AddWithValue("@ID", ID);
 
                 conexao.AbrirConexao();
                 using (SqlDataReader registro = cmd.ExecuteReader())
@@ -117,7 +115,6 @@ namespace Dados
                             ProdutoID = Convert.ToInt32(registro["ProdutoID"]),
                             Quantidade = Convert.ToInt32(registro["Quantidade"]),
                             ValorTotal = Convert.ToDecimal(registro["Valor_Total"]),
-                            FuncionarioID = Convert.ToInt32(registro["FuncionarioID"])
                         };
                     }
                 }

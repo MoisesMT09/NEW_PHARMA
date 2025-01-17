@@ -62,6 +62,14 @@ namespace Negocio
             DVenda Dobj = new DVenda(conexao);
             return Dobj.CarregaModeloVenda(id);
         }
+
+        //public DataTable ObterTodosProdutos()
+        //{
+        //    DProduto dProduto = new DProduto(conexao);
+        //    return dProduto.BuscarTodosProdutos();
+        //}
+
+
     }
 }
 

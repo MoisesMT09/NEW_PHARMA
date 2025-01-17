@@ -20,7 +20,7 @@ namespace Dados
             this.conexao = cox;
         }
 
-        public void Incluir(ModeloItemVenda modelo)
+        public void Incluir(ModeloItem_Vendido modelo)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Dados
             }
         }
 
-        public void Alterar(ModeloItemVenda modelo)
+        public void Alterar(ModeloItem_Vendido modelo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -89,9 +89,9 @@ namespace Dados
             return tabela;
         }
 
-        public ModeloItemVenda CarregaModeloItemVenda(int id)
+        public ModeloItem_Vendido CarregaModeloItemVenda(int id)
         {
-            ModeloItemVenda modelo = null;
+            ModeloItem_Vendido? modelo = null;
 
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -105,7 +105,7 @@ namespace Dados
                     if (registro.HasRows)
                     {
                         registro.Read();
-                        modelo = new ModeloItemVenda
+                        modelo = new ModeloItem_Vendido
                         {
                             ItemVendaID = Convert.ToInt32(registro["ID"]),
                             VendaID = Convert.ToInt32(registro["VendaID"]),

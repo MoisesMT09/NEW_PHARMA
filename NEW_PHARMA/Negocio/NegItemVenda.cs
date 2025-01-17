@@ -18,7 +18,7 @@ namespace Negocio
             this.conexao = cox;
         }
 
-        public void Incluir(ModeloItemVenda modelo)
+        public void Incluir(ModeloItem_Vendido modelo)
         {
             if (modelo.VendaID <= 0)
                 throw new Exception("O código da venda é obrigatório.");
@@ -33,7 +33,7 @@ namespace Negocio
             Dobj.Incluir(modelo);
         }
 
-        public void Alterar(ModeloItemVenda modelo)
+        public void Alterar(ModeloItem_Vendido modelo)
         {
             if (modelo.ItemVendaID <= 0)
                 throw new Exception("O código do item da venda é obrigatório.");
@@ -65,10 +65,13 @@ namespace Negocio
             return Dobj.LocalizarPorVenda(vendaID);
         }
 
-        public ModeloItemVenda CarregaModeloItemVenda(int id)
+        public ModeloItem_Vendido CarregaModeloItemVenda(int id)
         {
             DItemVenda Dobj = new DItemVenda(conexao);
             return Dobj.CarregaModeloItemVenda(id);
         }
+
+       
+
     }
 }

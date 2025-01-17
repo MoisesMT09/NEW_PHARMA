@@ -31,14 +31,14 @@ namespace Dados
                     cmd.CommandText = "INSERT INTO tbCategoria (Nome) VALUES (@Nome); SELECT SCOPE_IDENTITY();";
 
                     // Usando a variável CategNome do modelo para inserir no banco
-                    cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = modelo.CategNome;
+                    cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = modelo.CategNome;
 
                     conexao.AbrirConexao();
 
                     object result = cmd.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out int id))
+                    if (result != null && int.TryParse(result.ToString(), out int ID))
                     {
-                        modelo.CategID = id; // Armazena o ID gerado após a inserção
+                        modelo.CategID = ID; // Armazena o ID gerado após a inserção
                     }
                     else
                     {
@@ -83,7 +83,7 @@ namespace Dados
         }
 
         // Método para excluir uma categoria
-        public void Excluir(int Codigo)
+        public void Excluir(int ID)
         {
             try
             {
@@ -91,10 +91,21 @@ namespace Dados
                 {
                     cmd.Connection = conexao.ObjectoConexao;
                     cmd.CommandText = "DELETE FROM tbCategoria WHERE ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", Codigo);
+
+                    // Adiciona o parâmetro com tipo explícito
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
                     conexao.AbrirConexao();
-                    cmd.ExecuteNonQuery();
+
+                    // Exibe o ID sendo passado para depuração
+                    Console.WriteLine($"Excluindo categoria com ID: {ID}");
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("Nenhuma categoria encontrada com o ID fornecido.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -107,16 +118,22 @@ namespace Dados
             }
         }
 
+
         // Método para localizar categorias com base no nome
         public DataTable Localizar(string valor)
         {
             DataTable tabela = new DataTable();
             try
             {
-                string query = "SELECT * FROM tbCategoria WHERE Nome LIKE @valor";
+                string query = string.IsNullOrEmpty(valor)
+                    ? "SELECT * FROM tbCategoria"
+                    : "SELECT * FROM tbCategoria WHERE Nome LIKE @Valor";
                 using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
                 {
-                    da.SelectCommand.Parameters.AddWithValue("@valor", "%" + valor + "%");
+                    if (!string.IsNullOrEmpty(valor))
+                    {
+                        da.SelectCommand.Parameters.AddWithValue("@Valor", "%" + valor + "%");
+                    }
                     da.Fill(tabela);
                 }
             }
@@ -128,9 +145,9 @@ namespace Dados
         }
 
         // Método para carregar uma categoria por ID
-        public ModeloCategoria CarregaModeloCategoria(int Codigo)
+        public ModeloCategoria CarregaModeloCategoria(int ID)
         {
-            ModeloCategoria modelo = null;
+            ModeloCategoria? modelo = null;
             try
             {
                 string query = "SELECT * FROM tbCategoria WHERE ID = @ID";
@@ -139,7 +156,7 @@ namespace Dados
                 {
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@ID", Codigo);
+                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
                         conn.Open();
                         using (SqlDataReader registro = cmd.ExecuteReader())
@@ -163,5 +180,22 @@ namespace Dados
             }
             return modelo;
         }
+
+        public DataTable CarregarDados()
+        {
+            DataTable tabela = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(conexao.StringConexao1))
+            {
+                string sql = "SELECT * FROM tbCategoria"; // Ajuste os campos conforme sua tabela
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(tabela);
+            }
+
+            return tabela;
+        }
+
     }
 }

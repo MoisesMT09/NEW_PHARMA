@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Dados;
 using Negocio;
+using System.Runtime.InteropServices;
 
 namespace Views
 {
@@ -23,24 +24,19 @@ namespace Views
         public void LimpaTela()
         {
             txtNome.Clear();
-            txtID.Clear();
         }
 
-        public String Operacao;
+        public String Operacao = "";
 
         public void AlterarBotoes(int op)
         {
             pnDados.Enabled = false;
-            btnLocalizar.Enabled = false;
             btnInserir.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnAlterar.Enabled = false;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
             if (op == 1)
             {
                 btnInserir.Enabled = true;
-                btnLocalizar.Enabled = true;
             }
             if (op == 2)
             {
@@ -50,8 +46,6 @@ namespace Views
             }
             if (op == 3)
             {
-                btnAlterar.Enabled = true;
-                btnExcluir.Enabled = true;
                 btnCancelar.Enabled = true;
             }
         }
@@ -76,101 +70,35 @@ namespace Views
         {
             try
             {
-                // Leitura dos dados
+                // Criação do modelo e atribuição dos dados
                 ModeloCategoria modelo = new ModeloCategoria
                 {
                     CategNome = txtNome.Text
                 };
 
-                // Objeto para gravar os dados no banco
+                // Instância para manipulação do banco de dados
                 DadosConexao cox = new DadosConexao(DConexao.StringConexao);
                 NegCategoria negCateg = new NegCategoria(cox);
 
-                if (this.Operacao == "INSERIR")
-                {
-                    // Cadastrar uma categoria
-                    negCateg.Incluir(modelo);
-                    MessageBox.Show("Cadastro efectuado ID: " + modelo.CategID.ToString());
+                // Cadastrar uma nova categoria
+                negCateg.Incluir(modelo);
 
-                    // Preenche os campos com os dados inseridos
-                    txtID.Text = modelo.CategID.ToString();
-                    txtNome.Text = modelo.CategNome;
+                // Mensagem de sucesso
+                MessageBox.Show("Categoria cadastrada com sucesso!");
 
-                    AlterarBotoes(1); // Estado de edição
-                }
-                else
-                {
-                    // Alterar uma categoria
-                    modelo.CategID = Convert.ToInt32(txtID.Text);
-                    negCateg.Alterar(modelo);
-                    MessageBox.Show("Cadastro Alterado");
-                }
+                // Limpar os campos após o cadastro
                 this.LimpaTela();
+
+                // Alterar o estado dos botões para pós-cadastro
                 this.AlterarBotoes(1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                // Mensagem de erro
+                MessageBox.Show("Erro ao salvar categoria: " + ex.Message);
             }
 
-        }
-        private void btnLocalizar_Click(object sender, EventArgs e)
-        {
-            using (FormConsultarCategoria fCCategoria = new FormConsultarCategoria())
-            {
-                DadosConexao cox = new DadosConexao(DConexao.StringConexao);
-                NegCategoria negCategoria = new NegCategoria(cox);
-                ModeloCategoria modelo = negCategoria.CarregaModeloCategoria(fCCategoria.Codigo);
-                fCCategoria.ShowDialog();
-                if (fCCategoria.Codigo != 0)
-                {
 
-                    txtID.Text = modelo.CategID.ToString();
-                    txtNome.Text = modelo.CategNome;
-                    AlterarBotoes(3);
-
-                }
-                else
-                {
-                    LimpaTela();
-                    AlterarBotoes(1);
-                }
-            }
-
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            this.Operacao = "ALTERAR";
-            this.AlterarBotoes(2);
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult dial = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
-                if (dial.ToString() == "Yes")
-                {
-                    DadosConexao cox = new DadosConexao(DConexao.StringConexao);
-                    NegCategoria negCateg = new NegCategoria(cox);
-                    negCateg.Excluir(Convert.ToInt32(txtID.Text));
-                    this.LimpaTela();
-                    this.AlterarBotoes(1);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Impossivel excluir o registro. \n o registro está sendo utilizado em outro local");
-                this.AlterarBotoes(3);
-
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            // Fecha o formulário atual
-            this.Close();
         }
 
         private void pbVoltar_Click(object sender, EventArgs e)
@@ -179,6 +107,42 @@ namespace Views
             FormTelaPrincipal telaPrincipal = new FormTelaPrincipal();
             this.Hide();
             telaPrincipal.Show();
+            this.Close();
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void FormCadastroDeCategoria_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pnDados_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pnBotao_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pbVoltar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

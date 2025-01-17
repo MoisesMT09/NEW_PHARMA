@@ -12,8 +12,19 @@ namespace Dados
         {
             get
             {
-                return "Data Source=GHDSE-PC8\\MSSQLSERVERT;Initial Catalog=dbNEW_PHARMA;Integrated Security=True;Trust Server Certificate=True";
+                return "Data Source=GHDSE-PC8\\MSSQLSERVERT;Initial Catalog=NEW_PHARMA;Integrated Security=True;Trust Server Certificate=True";
             }
+
+        }
+    
+
+        private DadosConexao conexao;
+
+        // Construtor da classe DConexao
+        public DConexao()
+        {
+            // Inicializa a conexão com a string de conexão
+            conexao = new DadosConexao(StringConexao);
         }
     }
 }

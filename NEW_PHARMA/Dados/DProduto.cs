@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using Modelo;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
-using Modelo;
-using Dados;
+using System.Windows;
 
 namespace Dados
 {
@@ -14,10 +13,37 @@ namespace Dados
     {
         private DadosConexao conexao;
 
-        public DProduto(DadosConexao cox)
+        public DProduto(DadosConexao conexao)
         {
-            this.conexao = cox;
+            this.conexao = conexao;
         }
+
+        public bool CategoriaExiste(int categID)
+        {
+            string query = "SELECT COUNT(*) FROM Categoria WHERE CategID = @CategID";
+            using (SqlConnection conn = new SqlConnection(conexao.StringConexao1))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@CategID", categID);
+                conn.Open();
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
+        public bool FornecedorExiste(int fornecID)
+        {
+            string query = "SELECT COUNT(*) FROM Fornecedor WHERE FornecID = @FornecID";
+            using (SqlConnection conn = new SqlConnection(conexao.StringConexao1))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@FornecID", fornecID);
+                conn.Open();
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
 
         public void InserirProduto(ModeloProduto produto)
         {
@@ -26,19 +52,23 @@ namespace Dados
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "INSERT INTO tbProduto (CategoriaID, Nome, Descricao, QuantEstoque, Preco, FornecedorID) " +
-                                      "VALUES (@CategoriaID, @Nome, @Descricao, @QuantEstoque, @Preco, @FornecedorID); " +
-                                      "SELECT SCOPE_IDENTITY();";
+                    cmd.CommandText = @"
+                        INSERT INTO tbProduto 
+                        (Nome, Descricao, Quant_Estoque, Preco, DataValidade, CategoriaID, FornecedorID) 
+                        VALUES 
+                        (@Nome, @Descricao, @QuantEstoque, @Preco, @DataValidade, @CategoriaID, @FornecedorID); 
+                        SELECT SCOPE_IDENTITY();";
 
-                    cmd.Parameters.Add("@CategoriaID", SqlDbType.Int).Value = produto.CategID;
                     cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = produto.NomeProduto;
                     cmd.Parameters.Add("@Descricao", SqlDbType.NVarChar).Value = produto.DescProduto;
                     cmd.Parameters.Add("@QuantEstoque", SqlDbType.Int).Value = produto.QuantEstProduto;
                     cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = produto.PrecoProduto;
+                    cmd.Parameters.Add("@DataValidade", SqlDbType.Date).Value = produto.DataValida;
+                    cmd.Parameters.Add("@CategoriaID", SqlDbType.Int).Value = produto.CategID;
                     cmd.Parameters.Add("@FornecedorID", SqlDbType.Int).Value = produto.FornecID;
 
                     conexao.AbrirConexao();
-                    produto.ProdutoID = Convert.ToInt32(cmd.ExecuteScalar());
+                    produto.ID = Convert.ToInt32(cmd.ExecuteScalar()); // Obtém o ID gerado pelo banco
                 }
             }
             catch (Exception ex)
@@ -51,74 +81,70 @@ namespace Dados
             }
         }
 
-        public void Alterar(ModeloProduto produto)
+        public bool Alterar(ModeloProduto produto)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "UPDATE tbProduto " +
-                                      "SET CategoriaID = @CategoriaID, " +
-                                      "    Nome = @Nome, " +
-                                      "    Descricao = @Descricao, " +
-                                      "    QuantEstoque = @QuantEstoque, " +
-                                      "    Preco = @Preco, " +
-                                      "    FornecedorID = @FornecedorID " +
-                                      "WHERE ProdutoID = @ProdutoID";
+                string sql = @"
+                    UPDATE tbProduto
+                    SET Nome = @Nome,
+                        Descricao = @Descricao,
+                        Quant_Estoque = @QuantEstoque,
+                        Preco = @Preco,
+                        DataValidade = @DataValidade,
+                        CategoriaID = @CategoriaID,
+                        FornecedorID = @FornecedorID
+                    WHERE ID = @ID";
 
-                    // Adiciona os parâmetros com tipos explícitos
-                    cmd.Parameters.Add("@CategoriaID", SqlDbType.Int).Value = produto.CategID;
+                using (SqlCommand cmd = new SqlCommand(sql, conexao.ObjectoConexao))
+                {
                     cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = produto.NomeProduto;
                     cmd.Parameters.Add("@Descricao", SqlDbType.NVarChar).Value = produto.DescProduto;
                     cmd.Parameters.Add("@QuantEstoque", SqlDbType.Int).Value = produto.QuantEstProduto;
                     cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = produto.PrecoProduto;
+                    cmd.Parameters.Add("@DataValidade", SqlDbType.Date).Value = produto.DataValida;
+                    cmd.Parameters.Add("@CategoriaID", SqlDbType.Int).Value = produto.CategID;
                     cmd.Parameters.Add("@FornecedorID", SqlDbType.Int).Value = produto.FornecID;
-                    cmd.Parameters.Add("@ProdutoID", SqlDbType.Int).Value = produto.ProdutoID;
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = produto.ID;
 
-                    // Abre a conexão, executa o comando e fecha automaticamente
                     conexao.AbrirConexao();
-                    cmd.ExecuteNonQuery();
+                    return cmd.ExecuteNonQuery() > 0; // Retorna true se houver linhas afetadas
                 }
             }
             catch (Exception ex)
             {
-                // Trata exceções e propaga o erro
-                throw new Exception("Erro ao alterar produto: " + ex.Message);
+                throw new Exception("Erro ao alterar Produto: " + ex.Message);
             }
             finally
             {
-                // Garante o fechamento da conexão
                 conexao.FecharConexao();
             }
         }
 
-
-        public void Excluir(int produtoID)
+        public void Excluir(int id)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "DELETE FROM tbProduto WHERE ProdutoID = @ProdutoID";
+                    cmd.CommandText = "DELETE FROM tbProduto WHERE ID = @ID";
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
-                    // Adiciona o parâmetro com tipo explícito
-                    cmd.Parameters.Add("@ProdutoID", SqlDbType.Int).Value = produtoID;
-
-                    // Abre a conexão, executa o comando e fecha automaticamente
                     conexao.AbrirConexao();
-                    cmd.ExecuteNonQuery();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("Nenhum produto encontrado com o ID fornecido.");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                // Trata exceções e propaga o erro
-                throw new Exception("Erro ao excluir produto: " + ex.Message);
+                throw new Exception("Erro ao excluir Produto: " + ex.Message);
             }
             finally
             {
-                // Garante o fechamento da conexão
                 conexao.FecharConexao();
             }
         }
@@ -126,79 +152,66 @@ namespace Dados
         public DataTable Localizar(string valor)
         {
             DataTable tabela = new DataTable();
-
             try
             {
-                using (SqlCommand cmd = new SqlCommand())
+                string query = string.IsNullOrEmpty(valor)
+                    ? "SELECT * FROM tbProduto"
+                    : "SELECT * FROM tbProduto WHERE Nome LIKE @Valor";
+
+                using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
                 {
-                    cmd.Connection = conexao.ObjectoConexao;
-                    cmd.CommandText = "SELECT * FROM tbProduto WHERE Nome LIKE @Valor";
-
-                    // Define o parâmetro com o tipo apropriado
-                    cmd.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = $"%{valor}%";
-
-                    // Usa SqlDataAdapter para preencher a tabela
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    if (!string.IsNullOrEmpty(valor))
                     {
-                        da.Fill(tabela);
+                        da.SelectCommand.Parameters.AddWithValue("@Valor", "%" + valor + "%");
                     }
+                    da.Fill(tabela);
                 }
             }
             catch (Exception ex)
             {
-                // Trata exceções
-                throw new Exception("Erro ao localizar produtos: " + ex.Message);
+                throw new Exception("Erro ao localizar Produto: " + ex.Message);
             }
-
             return tabela;
         }
 
-
-        public ModeloProduto CarregaModeloProduto(int Codigo)
+        public ModeloProduto CarregaModeloProduto(int id)
         {
-            ModeloProduto modelo = null;
-
             try
             {
                 string query = "SELECT * FROM tbProduto WHERE ID = @ID";
-                using (SqlConnection conexao = new SqlConnection(DConexao.StringConexao))
+                using (SqlCommand cmd = new SqlCommand(query, conexao.ObjectoConexao))
                 {
-                    using (SqlCommand cmd = new SqlCommand(query, conexao))
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+                    conexao.AbrirConexao();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = Codigo;
-
-                        conexao.Open();
-                        using (SqlDataReader registro = cmd.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (registro.HasRows)
+                            return new ModeloProduto
                             {
-                                registro.Read();
-
-                                modelo = new ModeloProduto
-                                {
-                                    ProdutoID = Convert.ToInt32(registro["ID"]),
-                                    CategID = Convert.ToInt32(registro["CategoriaID"]),
-                                    NomeProduto = Convert.ToString(registro["Nome"]),
-                                    DescProduto = Convert.ToString(registro["Descricao"]),
-                                    QuantEstProduto = Convert.ToInt32(registro["QuantEstoque"]),
-                                    PrecoProduto = Convert.ToDecimal(registro["Preco"]),
-                                    FornecID = Convert.ToInt32(registro["FornecedorID"])
-                                };
-                            }
+                                ID = Convert.ToInt32(reader["ID"]),
+                                NomeProduto = Convert.ToString(reader["Nome"]),
+                                DescProduto = Convert.ToString(reader["Descricao"]),
+                                QuantEstProduto = Convert.ToInt32(reader["Quant_Estoque"]),
+                                PrecoProduto = Convert.ToDecimal(reader["Preco"]),
+                                DataValida = Convert.ToDateTime(reader["DataValidade"]),
+                                CategID = Convert.ToInt32(reader["CategoriaID"]),
+                                FornecID = Convert.ToInt32(reader["FornecedorID"])
+                            };
                         }
                     }
                 }
+                return null;
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao carregar os dados do produto.", ex);
+                throw new Exception("Erro ao carregar dados do Produto: " + ex.Message);
             }
-
-            return modelo;
+            finally
+            {
+                conexao.FecharConexao();
+            }
         }
-
     }
-
-
 }
-

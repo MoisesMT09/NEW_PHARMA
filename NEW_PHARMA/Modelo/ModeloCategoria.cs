@@ -20,7 +20,7 @@ namespace Modelo
             this.CategNome = Nome;
         }
 
-        private int ID;
+        private int ID ;
 
         public int CategID
         {
@@ -28,7 +28,7 @@ namespace Modelo
             set { ID = value; }
         }
 
-        private String Nome;
+        private String Nome = "";
 
         public String CategNome
         {

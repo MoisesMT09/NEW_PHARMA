@@ -44,7 +44,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Schoolbook", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(71, 217);
+            label1.Location = new Point(103, 270);
             label1.Name = "label1";
             label1.Size = new Size(237, 34);
             label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Schoolbook", 9F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(83, 251);
+            label2.Location = new Point(115, 304);
             label2.Name = "label2";
             label2.Size = new Size(207, 22);
             label2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             btnEntrar.BackColor = Color.Cyan;
             btnEntrar.Font = new Font("Century Schoolbook", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(429, 222);
+            btnEntrar.Location = new Point(550, 276);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(242, 73);
             btnEntrar.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Schoolbook", 8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label3.Location = new Point(495, 494);
+            label3.Location = new Point(624, 656);
             label3.Name = "label3";
             label3.Size = new Size(112, 19);
             label3.TabIndex = 3;
@@ -97,14 +97,15 @@
             pnCores.ForeColor = Color.White;
             pnCores.Location = new Point(-3, -1);
             pnCores.Name = "pnCores";
-            pnCores.Size = new Size(389, 544);
+            pnCores.Size = new Size(460, 716);
             pnCores.TabIndex = 4;
+            pnCores.MouseDown += pnCores_MouseDown;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(733, 12);
+            pictureBox1.Location = new Point(855, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 33);
             pictureBox1.TabIndex = 30;
@@ -115,7 +116,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 544);
+            ClientSize = new Size(900, 700);
             Controls.Add(pictureBox1);
             Controls.Add(pnCores);
             Controls.Add(label3);
@@ -124,6 +125,8 @@
             Name = "FormTelaDeApresentacao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela De Apresentação";
+            Load += FormTelaDeApresentacao_Load;
+            MouseDown += FormTelaDeApresentacao_MouseDown;
             pnCores.ResumeLayout(false);
             pnCores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

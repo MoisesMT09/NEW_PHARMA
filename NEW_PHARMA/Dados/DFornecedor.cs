@@ -77,16 +77,28 @@ namespace Dados
         public DataTable Localizar(string valor)
         {
             DataTable tabela = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM tbFornecedor WHERE Nome LIKE '%{valor}%';", conexao.StringConexao1))
+            try
             {
-                da.Fill(tabela);
+                string query = "SELECT Nome, NIF, Endereco, Telefone, E_mail " +
+                               "FROM tbFornecedor WHERE Nome LIKE @Valor";
+
+                using (SqlDataAdapter da = new SqlDataAdapter(query, conexao.StringConexao1))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@Valor", "%" + valor + "%");
+                    da.Fill(tabela);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao localizar fornecedor: {ex.Message}");
             }
             return tabela;
         }
 
+
         public ModeloFornecedor CarregaModeloFornecedor(int id)
         {
-            ModeloFornecedor modelo = null;
+            ModeloFornecedor? modelo = null;
             string query = "SELECT * FROM tbFornecedor WHERE ID = @ID";
 
             using (SqlConnection con = new SqlConnection(conexao.StringConexao1))
