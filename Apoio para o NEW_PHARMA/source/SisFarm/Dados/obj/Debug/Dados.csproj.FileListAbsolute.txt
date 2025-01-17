@@ -1,0 +1,12 @@
+C:\Users\Domingos H\source\repos\SisFarm\Dados\obj\Debug\Dados.csproj.AssemblyReference.cache
+C:\Users\Domingos H\source\repos\SisFarm\Dados\obj\Debug\Dados.csproj.CoreCompileInputs.cache
+C:\Users\Domingos H\source\repos\SisFarm\Dados\bin\Debug\Dados.dll
+C:\Users\Domingos H\source\repos\SisFarm\Dados\bin\Debug\Dados.pdb
+C:\Users\Domingos H\source\repos\SisFarm\Dados\obj\Debug\Dados.dll
+C:\Users\Domingos H\source\repos\SisFarm\Dados\obj\Debug\Dados.pdb
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\bin\Debug\Dados.dll
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\bin\Debug\Dados.pdb
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\obj\Debug\Dados.csproj.AssemblyReference.cache
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\obj\Debug\Dados.csproj.CoreCompileInputs.cache
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\obj\Debug\Dados.dll
+C:\Users\moise\Downloads\source (2)\source\SisFarm\Dados\obj\Debug\Dados.pdb
