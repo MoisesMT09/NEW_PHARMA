@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj": {}
+    "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj": {
+    "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj",
+        "projectUniqueName": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj",
         "projectName": "Dados",
-        "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj",
+        "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj",
         "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\obj\\",
+        "outputPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj"
+              "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj",
+        "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj",
         "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\obj\\",
+        "outputPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -190,14 +190,14 @@
         }
       }
     },
-    "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj": {
+    "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj",
+        "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\Negocio.csproj",
         "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\obj\\",
+        "outputPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -218,11 +218,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj": {
-                "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj"
+              "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj": {
+                "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Dados\\Dados.csproj"
               },
-              "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\moise\\Documents\\MOISÉS\\Projectos\\NEW_PHARMA\\SISTEMA_NEW_PHARMA\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj"
+              "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\moise\\Documents\\GitHub\\NEW_PHARMA\\NEW_PHARMA\\Modelo\\Modelo.csproj"
               }
             }
           }
