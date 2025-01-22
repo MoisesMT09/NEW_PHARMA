@@ -12,7 +12,7 @@ namespace Dados
         {
             get
             {
-                return "Data Source=GHDSE-PC8\\MSSQLSERVERT;Initial Catalog=NEW_PHARMA;Integrated Security=True;Trust Server Certificate=True";
+                return "Data Source=GHDSE-PC8\\MSSQLSERVERT;Initial Catalog=NUEVA_FARMA;Integrated Security=True;Trust Server Certificate=True";
             }
 
         }

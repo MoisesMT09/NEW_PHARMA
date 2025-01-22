@@ -58,10 +58,6 @@
               "target": "Package",
               "version": "[4.6.1, )"
             },
-            "Guna.UI2.WinForms": {
-              "target": "Package",
-              "version": "[2.0.4.6, )"
-            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.5, )"
@@ -149,10 +145,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Guna.UI2.WinForms": {
-              "target": "Package",
-              "version": "[2.0.4.6, )"
-            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.5, )"
@@ -243,10 +235,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Guna.UI2.WinForms": {
-              "target": "Package",
-              "version": "[2.0.4.6, )"
-            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.5, )"

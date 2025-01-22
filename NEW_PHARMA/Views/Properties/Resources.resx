@@ -121,16 +121,19 @@
   <data name="medicine_icon-icons.com_66070" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medicine_icon-icons.com_66070.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medicine_icon-icons.com_66070 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medicine_icon-icons.com_66070 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back_arrow_icon_134660" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_arrow_icon_134660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medicine_icon-icons.com_66070 (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medicine_icon-icons.com_66070 (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cardiogram_icon-icons.com_66072 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cardiogram_icon-icons.com_66072 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medicine_icon-icons.com_66070 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medicine_icon-icons.com_66070 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back_arrow_icon_134660 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_arrow_icon_134660 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medicine_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medicine_icon-icons.com_66070 (5)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cardiogram_icon-icons.com_66072" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cardiogram_icon-icons.com_66072.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_112351" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_112351.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
